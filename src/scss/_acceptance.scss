@@ -1,0 +1,10 @@
+.wpcf7-list-item{
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    margin-left: 0;
+
+    & label{
+        @extend .wpcf7-list-item;
+    }
+}

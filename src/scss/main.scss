@@ -1,0 +1,329 @@
+// Variables
+$input-padding-y: .375rem;
+$input-padding-x: .75rem;
+$input-font-size: 1rem;
+$input-line-height: 1.5;
+$input-color: #212529;
+$input-bg: #fff;
+$input-border-color: #ced4da;
+$input-border-radius: .25rem;
+$input-focus-border-color: #86b7fe;
+$input-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+$form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+$form-check-input-width: 1em;
+$form-check-padding-start: 1.5em;
+$floating-input-padding-t: 1.625rem;
+$floating-input-padding-b: .625rem;
+$floating-label-opacity: .65;
+$floating-label-transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+$form-range-track-width: 100%;
+$form-range-track-height: .5rem;
+$form-range-thumb-width: 1rem;
+$form-range-thumb-height: $form-range-thumb-width;
+$form-range-thumb-bg: #0d6efd;
+$form-range-thumb-border: 0;
+$form-range-thumb-border-radius: 1rem;
+$form-range-track-bg: #dee2e6;
+$form-range-track-border-radius: 1rem;
+$form-select-padding-y: $input-padding-y;
+$form-select-padding-x: $input-padding-x;
+$form-select-indicator-padding: 3rem;
+$form-select-indicator-color: $input-color;
+$form-select-indicator-bg: $form-select-indicator;
+$form-select-bg-size: 16px 12px;
+$form-select-bg-position: right $form-select-padding-x center;
+$form-select-bg-repeat: no-repeat;
+$form-select-border-width: 1px;
+$form-select-border-color: $input-border-color;
+$form-select-border-radius: $input-border-radius;
+$form-select-focus-border-color: $input-focus-border-color;
+$form-select-focus-box-shadow: $input-focus-box-shadow;
+$form-select-disabled-color: #6c757d;
+$form-select-disabled-bg: #e9ecef;
+$form-select-disabled-border-color: $input-border-color;
+
+// Mixins
+@mixin form-control-focus() {
+  &:focus {
+    color: $input-color;
+    background-color: $input-bg;
+    border-color: $input-focus-border-color;
+    outline: 0;
+    box-shadow: $input-focus-box-shadow;
+  }
+}
+
+// Styles
+.lcf7-form-control {
+  display: block;
+  width: 100%;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $input-font-size;
+  font-weight: 400;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-clip: padding-box;
+  border: 1px solid $input-border-color;
+  appearance: none;
+  border-radius: $input-border-radius;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+  @include form-control-focus();
+}
+
+.lcf7-form-range {
+  width: 100%;
+  height: $form-range-thumb-height;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+
+    &::-webkit-slider-thumb { 
+      box-shadow: 0 0 0 1px #fff, $input-focus-box-shadow; 
+    }
+    &::-moz-range-thumb { 
+      box-shadow: 0 0 0 1px #fff, $input-focus-box-shadow;
+    }
+  }
+
+  &::-webkit-slider-thumb {
+    width: $form-range-thumb-width;
+    height: $form-range-thumb-height;
+    margin-top: ($form-range-track-height - $form-range-thumb-height) * .5;
+    background-color: $form-range-thumb-bg;
+    border: $form-range-thumb-border;
+    border-radius: $form-range-thumb-border-radius;
+    appearance: none;
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: $form-range-track-width;
+    height: $form-range-track-height;
+    color: transparent;
+    cursor: pointer;
+    background-color: $form-range-track-bg;
+    border-color: transparent;
+    border-radius: $form-range-track-border-radius;
+  }
+
+  &::-moz-range-thumb {
+    width: $form-range-thumb-width;
+    height: $form-range-thumb-height;
+    background-color: $form-range-thumb-bg;
+    border: $form-range-thumb-border;
+    border-radius: $form-range-thumb-border-radius;
+    appearance: none;
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  }
+
+  &::-moz-range-track {
+    width: $form-range-track-width;
+    height: $form-range-track-height;
+    color: transparent;
+    cursor: pointer;
+    background-color: $form-range-track-bg;
+    border-color: transparent;
+    border-radius: $form-range-track-border-radius;
+  }
+
+  &:disabled {
+    pointer-events: none;
+
+    &::-webkit-slider-thumb {
+      background-color: lighten($form-range-thumb-bg, 20%);
+    }
+
+    &::-moz-range-thumb {
+      background-color: lighten($form-range-thumb-bg, 20%);
+    }
+  }
+}
+
+.lcf7-form-select {
+  display: block;
+  width: 100%;
+  padding: $form-select-padding-y $form-select-padding-x;
+  font-family: inherit;
+  font-size: $input-font-size;
+  font-weight: 400;
+  line-height: $input-line-height;
+  color: $input-color;
+  background-color: $input-bg;
+  background-image: $form-select-indicator-bg;
+  background-repeat: $form-select-bg-repeat;
+  background-position: $form-select-bg-position;
+  background-size: $form-select-bg-size;
+  border: $form-select-border-width solid $form-select-border-color;
+  border-radius: $form-select-border-radius;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  appearance: none;
+
+  &:focus {
+    border-color: $form-select-focus-border-color;
+    outline: 0;
+    box-shadow: $form-select-focus-box-shadow;
+  }
+
+  &[multiple],
+  &[size]:not([size="1"]) {
+    padding-right: $form-select-padding-x;
+    background-image: none;
+  }
+
+  &:disabled {
+    color: $form-select-disabled-color;
+    background-color: $form-select-disabled-bg;
+    border-color: $form-select-disabled-border-color;
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 $input-color;
+  }
+
+  &:hover:not(:disabled):not([readonly]) {
+    cursor: pointer;
+  }
+}
+
+.lcf7-form-check {
+  display: block;
+  min-height: $form-check-input-width * $input-line-height;
+}
+
+.lcf7-form-check-input {
+  width: $form-check-input-width;
+  height: $form-check-input-width;
+  margin-top: ($input-line-height - $form-check-input-width) * .5;
+  vertical-align: top;
+  background-color: $input-bg;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(0, 0, 0, .25);
+  appearance: none;
+
+  &[type="checkbox"] {
+    border-radius: .25em;
+  }
+
+  &[type="radio"] {
+    border-radius: 50%;
+  }
+}
+
+.lcf7-form-floating {
+  position: relative;
+
+  > .lcf7-form-control,
+  > .lcf7-form-select {
+    height: calc(3.5rem + 2px);
+    padding: 1rem .75rem;
+  }
+
+  > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem .75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+  }
+
+  > .lcf7-form-control {
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      padding-top: $floating-input-padding-t;
+      padding-bottom: $floating-input-padding-b;
+    }
+
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      opacity: $floating-label-opacity;
+      transform: $floating-label-transform;
+    }
+
+    &:-webkit-autofill ~ label {
+      opacity: $floating-label-opacity;
+      transform: $floating-label-transform;
+    }
+  }
+
+  > .lcf7-form-select {
+    &:focus,
+    &:not([value=""]):not([value="0"]) {
+      padding-top: $floating-input-padding-t;
+      padding-bottom: $floating-input-padding-b;
+    }
+
+    &:focus ~ label,
+    &:not([value=""]):not([value="0"]) ~ label {
+      opacity: $floating-label-opacity;
+      transform: $floating-label-transform;
+    }
+  }
+}
+
+.lcf7-input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+
+  > .lcf7-form-control,
+  > .lcf7-form-select {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+  }
+}
+
+.lcf7-was-validated {
+  .lcf7-form-control:valid, .lcf7-form-control.is-valid {
+    border-color: #198754;
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+  }
+
+  .lcf7-form-control:invalid, .lcf7-form-control.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + .75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(.375em + .1875rem) center;
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+  }
+}
+
+.lcf7-d-flex{
+  display: flex;
+}
+.lcf7-flex-direction-column{
+  flex-direction: column;
+}
+@import "acceptance.scss";
+
+@import "radio_button";
+
+.l-cf7-field-parent{
+  p{
+    margin-bottom: 0 !important;
+  }
+}

@@ -1,0 +1,80 @@
+// Base form styles
+.form-control {
+    display: block;
+    width: 100%;
+    padding: $padding-input;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: $label-color;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    @include transition(border-color, box-shadow);
+  
+    &:focus {
+      @include focus-style($input-focus-color);
+      box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.25);
+    }
+  }
+  
+  // Floating form styles
+  .form-floating {
+    position: relative;
+    margin-bottom: 1.5rem;
+  
+    .form-control {
+      padding: $padding-input $padding-input 0.75rem;
+      height: auto;
+      line-height: 1.25;
+    }
+  
+    label {
+      position: absolute;
+      top: 50%;
+      left: $padding-input;
+      transform: translateY(-50%);
+      font-size: $font-size-label;
+      color: $label-color;
+      pointer-events: none;
+      @include transition(top, font-size, color);
+  
+      // Active and focus states
+      .form-control:focus + &,
+      .form-control:not(:placeholder-shown) + & {
+        top: 0;
+        font-size: $font-size-label-small;
+        color: $primary-color;
+        transform: translateY(-100%);
+      }
+    }
+  }
+  
+  // Other form types (example: inline form)
+  .form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  
+    .form-control {
+      flex: 1 1 auto;
+      width: auto;
+      margin-right: 0.5rem;
+    }
+  
+    button {
+      flex: 0 0 auto;
+    }
+  }
+  
+  // Form groups
+  .form-group {
+    margin-bottom: 1rem;
+  
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+  }
+  

@@ -1,0 +1,9 @@
+@mixin transition($properties...) {
+    transition: $properties 0.15s ease-in-out;
+  }
+  
+  @mixin focus-style($color) {
+    border-color: $color;
+    outline: none;
+  }
+  

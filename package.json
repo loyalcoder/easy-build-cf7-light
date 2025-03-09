@@ -1,0 +1,28 @@
+{
+  "name": "builder7-cf7-elementor-addon",
+  "version": "1.0.0",
+  "description": "Adds Elementor support for Contact Form 7. Contributors: Loyalcoder",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "sass src/scss/main.scss assets/main.css",
+    "watch-sass": "sass --watch src/scss/main.scss:assets/main.css",
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch",
+"bundle": "find . -name '*.DS_Store' -type f -delete && find . -name '*.css.map' -type f -delete && mkdir -p builder7 && rsync -av --exclude=builder7 --exclude=.stylelintrc.json --exclude=.eslintrc --exclude=.git --exclude=.gitattributes --exclude=.github --exclude=.gitignore --exclude=README.md --exclude=composer.json --exclude=composer.lock --exclude=node_modules --exclude=package-lock.json --exclude=package.json --exclude=.travis.yml --exclude=phpcs.xml.dist --exclude=src --exclude=yarn.lock --exclude=.cursorrules --exclude=webpack.config.js ./ builder7/ && dir-archiver --src ./builder7 --dest ~/Downloads/builder7.zip && rm -rf builder7"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.2",
+    "sass": "^1.83.4",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "dir-archiver": "^2.1.0"
+  }
+}
