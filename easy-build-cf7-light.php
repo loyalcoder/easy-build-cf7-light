@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Plugin Name:       Builder7 - Elementor Addon for Contact Form 7
- * Plugin URI:        https://builder7.loyalcoder.com
+ * Plugin Name:       Easy Build CF7 Light - Elementor Addon for Contact Form 7
+ * Plugin URI:        https://easy-build-cf7-light.loyalcoder.com
  * Description:       Seamlessly integrate Contact Form 7 forms with Elementor page builder. Design beautiful contact forms using Elementor's drag & drop interface, sync form fields automatically, and customize form layouts with Elementor widgets.
  * Version:           1.0.0
  * Author:            Loyalcoder
  * Author URI:        https://loyalcoder.com
- * Text Domain:       builder7
+ * Text Domain:       easy-build-cf7-light
  * Requires Plugins: contact-form-7, elementor
  * Domain Path:       /languages
  * Requires at least: 5.0
@@ -27,7 +27,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 /**
  * Main plugin class
  */
-final class Builder7
+final class EasyBuildCF7Light
 {
     /**
      * Plugin version
@@ -50,7 +50,7 @@ final class Builder7
     /**
      * Initialize singleton instance
      *
-     * @return \Builder7
+     * @return \EasyBuildCF7Light
      */
     public static function init()
     {
@@ -70,13 +70,13 @@ final class Builder7
      */
     public function define_constants()
     {
-        define('BUILDER7_VERSION', self::version);
-        define('BUILDER7_FILE', __FILE__);
-        define('BUILDER7_PATH', __DIR__);
-        define('BUILDER7_URL', plugins_url('', BUILDER7_FILE));
-        define('BUILDER7_ASSETS', BUILDER7_URL . '/assets');
-        define('BUILDER7_DIR_PATH', plugin_dir_path(__FILE__));
-        define('BUILDER7_ELEMENTOR', BUILDER7_DIR_PATH . 'includes/Elementor/');
+        define('EASY_BUILD_CF7_LIGHT_VERSION', self::version);
+        define('EASY_BUILD_CF7_LIGHT_FILE', __FILE__);
+        define('EASY_BUILD_CF7_LIGHT_PATH', __DIR__);
+        define('EASY_BUILD_CF7_LIGHT_URL', plugins_url('', EASY_BUILD_CF7_LIGHT_FILE));
+        define('EASY_BUILD_CF7_LIGHT_ASSETS', EASY_BUILD_CF7_LIGHT_URL . '/assets');
+        define('EASY_BUILD_CF7_LIGHT_DIR_PATH', plugin_dir_path(__FILE__));
+        define('EASY_BUILD_CF7_LIGHT_ELEMENTOR', EASY_BUILD_CF7_LIGHT_DIR_PATH . 'includes/Elementor/');
     }
 
     /**
@@ -86,7 +86,7 @@ final class Builder7
      */
     public function activate()
     {
-        $installer = new \Builder7\Installer();
+        $installer = new \EasyBuildCF7Light\Installer();
 
         $installer->run();
         delete_option( 'rewrite_rules' );
@@ -99,27 +99,27 @@ final class Builder7
      */
     public function init_plugin()
     {
-        new \Builder7\Assets();
-        new \Builder7\Ajax_Handler();
+        new \EasyBuildCF7Light\Assets();
+        new \EasyBuildCF7Light\Ajax_Handler();
         if (did_action('elementor/loaded')) {
-            new \Builder7\Load_Elementor();
+            new \EasyBuildCF7Light\Load_Elementor();
         }
-        new \Builder7\Generator();
+        new \EasyBuildCF7Light\Generator();
         if (is_admin()) {
-            new \Builder7\Admin();
-            new \Builder7\Sync();
+            new \EasyBuildCF7Light\Admin();
+            new \EasyBuildCF7Light\Sync();
         } 
     }
 }
-if(!function_exists('builder7')){
+if(!function_exists('easy_build_cf7_light')){
     /**
      * Initialize main plugin
      *
-     * @return \Builder7
+     * @return \EasyBuildCF7Light
      */
-    function builder7()
+    function easy_build_cf7_light()
     {
-        return Builder7::init();
+        return EasyBuildCF7Light::init();
     }
 }
-builder7();
+easy_build_cf7_light();
