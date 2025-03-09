@@ -1,15 +1,15 @@
 <?php
 
-namespace Builder7;
+namespace EasyBuildCF7Light;
 
 /**
  * Installer Class
  *
- * This class handles the installation and initialization tasks for the Builder7 plugin.
+ * This class handles the installation and initialization tasks for the Easy Build CF7 Light plugin.
  * It is responsible for setting up initial plugin options, registering version information,
  * flushing rewrite rules, and performing any other necessary actions upon plugin activation.
  *
- * @package Builder7
+ * @package EasyBuildCF7Light
  */
 class Installer
 {
@@ -40,15 +40,15 @@ class Installer
      */
     public function add_version()
     {
-        $installed = get_option('builder7_installed');
+        $installed = get_option('easy_build_cf7_light_installed');
 
         // If the plugin is not yet marked as installed, record the installation timestamp.
         if (!$installed) {
-            update_option('builder7_installed', time());
+            update_option('easy_build_cf7_light_installed', time());
         }
 
         // Update the plugin version in the options table to the current version.
-        update_option('builder7_version', \Builder7::version);
+        update_option('easy_build_cf7_light_version', EASY_BUILD_CF7_LIGHT_VERSION);
     }
 
 }
