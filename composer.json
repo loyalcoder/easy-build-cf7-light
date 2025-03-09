@@ -1,7 +1,7 @@
 {
-  "name": "builder7/cf7-elementor-addon",
+  "name": "loyalcoder/easy-build-cf7-light",
   "description": "Adds Elementor support for Contact Form 7",
-  "type": "wordpress-plugin",
+  "type": "wordpress-plugin", 
   "license": "GPLv2",
   "authors": [
     {
@@ -15,7 +15,7 @@
       "includes"
     ],
     "psr-4": {
-      "Builder7\\": "includes/"
+      "EasyBuildCF7Light\\": "includes/"
     },
     "files": [
       "includes/functions.php"
