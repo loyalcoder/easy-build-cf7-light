@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7;
+namespace EasyBuildCF7Light;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -35,14 +35,14 @@ class Assets
     public function get_scripts()
     {
         return [
-            'builder7-script' => [
-                'src'     => BUILDER7_ASSETS . '/js/frontend.js',
-                'version' => filemtime(BUILDER7_PATH . '/assets/js/frontend.js'),
+            'easy-build-cf7-light-script' => [
+                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/js/frontend.js',
+                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/js/frontend.js'),
                 'deps'    => ['jquery']
             ],
-            'builder7-enquiry-script' => [
-                'src'     => BUILDER7_ASSETS . '/dist/bundle.js',
-                'version' => filemtime(BUILDER7_PATH . '/assets/dist/bundle.js'),
+            'easy-build-cf7-light-enquiry-script' => [
+                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/bundle.js',
+                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/bundle.js'),
                 'deps'    => ['jquery']
             ]
         ];
@@ -57,9 +57,9 @@ class Assets
     public function get_styles()
     {
         return [
-            'builder7-style' => [
-                'src'     => BUILDER7_ASSETS . '/dist/main.css',
-                'version' => filemtime(BUILDER7_PATH . '/assets/dist/main.css'),
+            'easy-build-cf7-light-style' => [
+                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/main.css',
+                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/main.css'),
             ]
         ];
     }
@@ -76,17 +76,17 @@ class Assets
 
         foreach ($scripts as $handle => $script) {
             $deps = isset($script['deps']) ? $script['deps'] : false;
-            $version = isset($script['version']) ? $script['version'] : BUILDER7_VERSION;
+            $version = isset($script['version']) ? $script['version'] : EASY_BUILD_CF7_LIGHT_VERSION;
 
             wp_register_script($handle, $script['src'], $deps, $version, true);
         }
         foreach ($styles as $handle => $style) {
             $deps = isset($style['deps']) ? $style['deps'] : false;
-            $version = isset($style['version']) ? $style['version'] : BUILDER7_VERSION;
+            $version = isset($style['version']) ? $style['version'] : EASY_BUILD_CF7_LIGHT_VERSION;
 
             wp_register_style($handle, $style['src'], $deps, $version);
         }
-        wp_enqueue_style('builder7-style');
+        wp_enqueue_style('easy-build-cf7-light-style');
     }
 
     /**
@@ -102,49 +102,49 @@ class Assets
         // Only load on plugin admin pages
         if (in_array($screen->id, $allowed_admin)) {
             wp_enqueue_style(
-                'builder7-admin-style',
-                BUILDER7_ASSETS . '/dist/admin.css',
+                'easy-build-cf7-light-admin-style',
+                EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/admin.css',
                 [],
-                filemtime(BUILDER7_PATH . '/assets/dist/admin.css')
+                filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/admin.css')
             );
 
             wp_enqueue_script(
-                'builder7-admin-script', 
-                BUILDER7_ASSETS . '/dist/admin.bundle.js',
+                'easy-build-cf7-light-admin-script', 
+                EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/admin.bundle.js',
                 ['jquery'],
-                filemtime(BUILDER7_PATH . '/assets/dist/admin.bundle.js'),
+                filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/admin.bundle.js'),
                 true
             );
             wp_enqueue_script(
-                'builder7Ajax', 
-                BUILDER7_ASSETS . '/dist/adminAjax.bundle.js',
+                'easy-build-cf7-light-ajax', 
+                EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/adminAjax.bundle.js',
                 ['jquery'],
-                filemtime(BUILDER7_PATH . '/assets/dist/adminAjax.bundle.js'),
+                filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/adminAjax.bundle.js'),
                 true
             );
-            wp_localize_script('builder7Ajax', 'builder7AjaxObject', array(
+            wp_localize_script('easy-build-cf7-light-ajax', 'easyBuildCF7LightAjaxObject', array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
-                'nonce'   => wp_create_nonce('builder7_ajax_nonce')
+                'nonce'   => wp_create_nonce('easy_build_cf7_light_ajax_nonce')
             ));
         }
         // Enqueue sync script only on Contact Form 7 admin page
         if ($screen->id === 'toplevel_page_wpcf7') {
             wp_enqueue_script(
-                'builder7-sync',
-                BUILDER7_ASSETS . '/dist/sync.bundle.js',
+                'easy-build-cf7-light-sync',
+                EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/sync.bundle.js',
                 ['jquery'],
-                filemtime(BUILDER7_PATH . '/assets/dist/sync.bundle.js'),
+                filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/sync.bundle.js'),
                 true
             );
             wp_enqueue_style(
-                'builder7-sync-style',
-                BUILDER7_ASSETS . '/dist/sync.css',
+                'easy-build-cf7-light-sync-style',
+                EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/sync.css',
                 [],
-                filemtime(BUILDER7_PATH . '/assets/dist/sync.css')
+                filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/sync.css')
             );
-            wp_localize_script('builder7Ajax', 'builder7AjaxObject', array(
+            wp_localize_script('easy-build-cf7-light-ajax', 'easyBuildCF7LightAjaxObject', array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
-                'nonce'   => wp_create_nonce('builder7_ajax_nonce')
+                'nonce'   => wp_create_nonce('easy_build_cf7_light_ajax_nonce')
             ));
         }
 

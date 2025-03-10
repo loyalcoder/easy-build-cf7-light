@@ -1,5 +1,5 @@
 <?php
-namespace Builder7\Elementor;
+namespace EasyBuildCF7Light\Elementor;
 
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -23,7 +23,7 @@ class Contact_Form extends Widget_Base {
      * @return string Widget name.
      */
     public function get_name() {
-        return 'builder7-contact-form';
+        return 'easy-build-cf7-light-contact-form';
     }
 
     /**
@@ -32,7 +32,7 @@ class Contact_Form extends Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__('Contact Form 7', 'builder7');
+        return esc_html__('Contact Form 7', 'easy-build-cf7-light');
     }
 
     /**
@@ -51,7 +51,7 @@ class Contact_Form extends Widget_Base {
      */
     public function get_style_depends() {
         return [
-            'builder7-style',
+            'easy-build-cf7-light-style',
         ];
     }
 
@@ -62,7 +62,7 @@ class Contact_Form extends Widget_Base {
      */
     public function get_script_depends() {
         return [
-            'builder7-script',
+            'easy-build-cf7-light-script',
         ];
     }
 
@@ -72,7 +72,7 @@ class Contact_Form extends Widget_Base {
      * @return array Widget categories.
      */
     public function get_categories() {
-        return ['builder-7-shortcode'];
+        return ['easy_build_cf7_light_widgets'];
     }
 
     /**
@@ -84,7 +84,7 @@ class Contact_Form extends Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__('Content', 'builder7'),
+                'label' => esc_html__('Content', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -92,7 +92,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'form_id',
             [
-                'label' => esc_html__('Select Form', 'builder7'),
+                'label' => esc_html__('Select Form', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::SELECT,
                 'options' => $this->get_cf7_forms(),
                 'default' => '',
@@ -104,7 +104,7 @@ class Contact_Form extends Widget_Base {
         $this->start_controls_section(
             'message_styles_section',
             [
-                'label' => esc_html__('Message Styles', 'builder7'),
+                'label' => esc_html__('Message Styles', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -113,7 +113,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'success_message_heading',
             [
-                'label' => esc_html__('Success Message', 'builder7'),
+                'label' => esc_html__('Success Message', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::HEADING,
             ]
         );
@@ -121,7 +121,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'success_message_color',
             [
-                'label' => esc_html__('Text Color', 'builder7'),
+                'label' => esc_html__('Text Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7 form.sent .wpcf7-response-output' => 'color: {{VALUE}};',
@@ -133,7 +133,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'success_message_bg',
             [
-                'label' => esc_html__('Background Color', 'builder7'),
+                'label' => esc_html__('Background Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7 form.sent .wpcf7-response-output' => 'background-color: {{VALUE}};',
@@ -157,7 +157,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'error_message_heading',
             [
-                'label' => esc_html__('Error Message', 'builder7'),
+                'label' => esc_html__('Error Message', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -166,7 +166,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'error_message_color',
             [
-                'label' => esc_html__('Text Color', 'builder7'),
+                'label' => esc_html__('Text Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7 form.invalid .wpcf7-response-output, {{WRAPPER}} .wpcf7 form.unaccepted .wpcf7-response-output, {{WRAPPER}} .wpcf7 form.payment-required .wpcf7-response-output' => 'color: {{VALUE}};',
@@ -178,7 +178,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'error_message_bg',
             [
-                'label' => esc_html__('Background Color', 'builder7'),
+                'label' => esc_html__('Background Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .wpcf7 form.invalid .wpcf7-response-output, {{WRAPPER}} .wpcf7 form.unaccepted .wpcf7-response-output, {{WRAPPER}} .wpcf7 form.payment-required .wpcf7-response-output' => 'background-color: {{VALUE}};',
@@ -202,7 +202,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'message_spacing_heading',
             [
-                'label' => esc_html__('Spacing', 'builder7'),
+                'label' => esc_html__('Spacing', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -211,7 +211,7 @@ class Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'message_padding',
             [
-                'label' => esc_html__('Padding', 'builder7'),
+                'label' => esc_html__('Padding', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -231,7 +231,7 @@ class Contact_Form extends Widget_Base {
         $this->add_responsive_control(
             'message_margin',
             [
-                'label' => esc_html__('Margin', 'builder7'),
+                'label' => esc_html__('Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -251,7 +251,7 @@ class Contact_Form extends Widget_Base {
         $this->add_control(
             'message_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'builder7'),
+                'label' => esc_html__('Border Radius', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -277,7 +277,7 @@ class Contact_Form extends Widget_Base {
      * @return array Array of form IDs and titles.
      */
     private function get_cf7_forms() {
-        $forms = ['' => esc_html__('Select a Form', 'builder7')];
+        $forms = ['' => esc_html__('Select a Form', 'easy-build-cf7-light')];
     
         $args = [
             'post_type'      => 'wpcf7_contact_form',
@@ -304,7 +304,7 @@ class Contact_Form extends Widget_Base {
         if (!empty($settings['form_id'])) {
             echo do_shortcode('[contact-form-7 id="' . esc_attr($settings['form_id']) . '"]');
         } else {
-            echo '<p>' . esc_html__('Please select a Contact Form 7 form.', 'builder7') . '</p>';
+            echo '<p>' . esc_html__('Please select a Contact Form 7 form.', 'easy-build-cf7-light') . '</p>';
         }
     }
 }

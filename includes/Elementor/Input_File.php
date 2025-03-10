@@ -5,13 +5,13 @@
  * Adds a file upload input field widget for Contact Form 7 forms in Elementor.
  * Allows configuring file types, size limits, required status and styling.
  *
- * @package Builder7
+ * @package EasyBuildCF7Light
  * @since 1.0.0
  * @requires Elementor
  * @requires Contact Form 7
  */
 
-namespace Builder7\Elementor;
+namespace EasyBuildCF7Light\Elementor;
 
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
@@ -24,12 +24,12 @@ class Input_File extends Widget_Base
 {
     public function get_name()
     {
-        return 'builder-7-input-file';
+        return 'easy-build-cf7-light-input-file';
     }
 
     public function get_title()
     {
-        return esc_html__('Input File', 'builder7');
+        return esc_html__('Input File', 'easy-build-cf7-light');
     }
     /**
      * Get widget icon.
@@ -47,7 +47,7 @@ class Input_File extends Widget_Base
      */
     public function get_categories()
     {
-        return ['builder_7_widgets'];
+        return ['easy_build_cf7_light_widgets'];
     }
 
     /**
@@ -57,7 +57,7 @@ class Input_File extends Widget_Base
      */
     public function get_keywords()
     {
-        return ['file', 'upload', 'input', 'form', 'builder-7', 'contact form 7'];
+        return ['file', 'upload', 'input', 'form', 'easy-build-cf7-light', 'contact form 7'];
     }
 
     protected function _register_controls()
@@ -65,13 +65,13 @@ class Input_File extends Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('File', 'builder7'),
+                'label' => esc_html__('File', 'easy-build-cf7-light'),
             ]
         );
         $this->add_control(
             'field_name',
             [
-                'label' => esc_html__( 'Field Name', 'builder7' ),
+                'label' => esc_html__( 'Field Name', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'file-'.wp_rand(100, 999),
             ]
@@ -79,10 +79,10 @@ class Input_File extends Widget_Base
         $this->add_control(
             'is_required',
             [
-                'label' => esc_html__( 'Required Field', 'builder7' ),
+                'label' => esc_html__( 'Required Field', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'builder7' ),
-                'label_off' => esc_html__( 'No', 'builder7' ),
+                'label_on' => esc_html__( 'Yes', 'easy-build-cf7-light' ),
+                'label_off' => esc_html__( 'No', 'easy-build-cf7-light' ),
                 'return_value' => 'required',
                 'default' => '',
             ]
@@ -90,7 +90,7 @@ class Input_File extends Widget_Base
         $this->add_control(
             'custom_validation_message',
             [
-                'label' => esc_html__( 'Custom Validation Message', 'builder7' ),
+                'label' => esc_html__( 'Custom Validation Message', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
                 'label_block' => true,
@@ -102,16 +102,16 @@ class Input_File extends Widget_Base
         $this->add_control(
             'classes',
             [
-                'label' => esc_html__( 'Classes (space-separated)', 'builder7' ),
+                'label' => esc_html__( 'Classes (space-separated)', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
-                'description' => esc_html__( 'Enter classes prefixed with "class:", e.g. "cla1 cla2"', 'builder7' ),
+                'description' => esc_html__( 'Enter classes prefixed with "class:", e.g. "cla1 cla2"', 'easy-build-cf7-light' ),
             ]
         );
         $this->add_control(
             'field_id',
             [
-                'label' => esc_html__( 'Field ID', 'builder7' ),
+                'label' => esc_html__( 'Field ID', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
             ]
@@ -119,10 +119,10 @@ class Input_File extends Widget_Base
         $this->add_control(
             'show_label',   
             [
-                'label' => esc_html__( 'Show Label', 'builder7' ),
+                'label' => esc_html__( 'Show Label', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'builder7' ),
-                'label_off' => esc_html__( 'No', 'builder7' ),
+                'label_on' => esc_html__( 'Yes', 'easy-build-cf7-light' ),
+                'label_off' => esc_html__( 'No', 'easy-build-cf7-light' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -130,7 +130,7 @@ class Input_File extends Widget_Base
         $this->add_control(
             'label',
             [
-                'label' => esc_html__( 'Label', 'builder7' ),
+                'label' => esc_html__( 'Label', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'First name',
                 'condition' => [
@@ -141,20 +141,20 @@ class Input_File extends Widget_Base
         $this->add_control(
             'field_file_types',
             [
-                'label' => esc_html__( 'Acceptable file types', 'builder7' ),
+                'label' => esc_html__( 'Acceptable file types', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
-                'description' => esc_html__( 'Pipe-separated file types list. You can use file extensions and MIME types.', 'builder7' ),
-                'default' => esc_html__( 'audio/*|video/*|image/*', 'builder7' ),
+                'description' => esc_html__( 'Pipe-separated file types list. You can use file extensions and MIME types.', 'easy-build-cf7-light' ),
+                'default' => esc_html__( 'audio/*|video/*|image/*', 'easy-build-cf7-light' ),
 
             ]
         );
         $this->add_control(
             'field_file_size_limit',
             [
-                'label' => esc_html__( 'File size limit', 'builder7' ),
+                'label' => esc_html__( 'File size limit', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
-                'description' => esc_html__( 'In bytes. You can use kb and mb suffixes.', 'builder7' ),
-                'default' => esc_html__( '1mb', 'builder7' ),
+                'description' => esc_html__( 'In bytes. You can use kb and mb suffixes.', 'easy-build-cf7-light' ),
+                'default' => esc_html__( '1mb', 'easy-build-cf7-light' ),
             ]
         );
         $this->end_controls_section();
@@ -162,7 +162,7 @@ class Input_File extends Widget_Base
         $this->start_controls_section(
             'label_style_section',
             [
-                'label' => esc_html__('Label', 'builder7'),
+                'label' => esc_html__('Label', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -170,7 +170,7 @@ class Input_File extends Widget_Base
         $this->add_control(
             'label_color',
             [
-                'label' => esc_html__('Label Color', 'builder7'),
+                'label' => esc_html__('Label Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} label' => 'color: {{VALUE}};',
@@ -188,7 +188,7 @@ class Input_File extends Widget_Base
         $this->add_responsive_control(
             'label_margin',
             [
-                'label' => esc_html__('Label Margin', 'builder7'),
+                'label' => esc_html__('Label Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -201,14 +201,14 @@ class Input_File extends Widget_Base
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__('File Input Style', 'builder7'),
+                'label' => esc_html__('File Input Style', 'easy-build-cf7-light'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
         $this->add_control(
             'file_text_color',
             [
-                'label'     => esc_html__('Text Color', 'builder7'),
+                'label'     => esc_html__('Text Color', 'easy-build-cf7-light'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .lcf7-form-control' => 'color: {{VALUE}};',
@@ -227,7 +227,7 @@ class Input_File extends Widget_Base
     $this->add_control(
         'file_background_color',
         [
-            'label' => esc_html__('Background Color', 'builder7'),
+            'label' => esc_html__('Background Color', 'easy-build-cf7-light'),
             'type' => Controls_Manager::COLOR,
             'selectors' => [
                 '{{WRAPPER}} .lcf7-form-control' => 'background-color: {{VALUE}};',
@@ -246,7 +246,7 @@ class Input_File extends Widget_Base
     $this->add_responsive_control(
         'file_border_radius',
         [
-            'label' => esc_html__('Border Radius', 'builder7'),
+            'label' => esc_html__('Border Radius', 'easy-build-cf7-light'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', '%'],
             'selectors' => [
@@ -258,7 +258,7 @@ class Input_File extends Widget_Base
     $this->add_responsive_control(
         'file_padding',
         [
-            'label' => esc_html__('Padding', 'builder7'),
+            'label' => esc_html__('Padding', 'easy-build-cf7-light'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', 'em', '%'],
             'selectors' => [
@@ -270,7 +270,7 @@ class Input_File extends Widget_Base
     $this->add_responsive_control(
         'file_margin',
         [
-            'label' => esc_html__('Margin', 'builder7'),
+            'label' => esc_html__('Margin', 'easy-build-cf7-light'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', 'em', '%'],
             'selectors' => [
@@ -301,12 +301,12 @@ class Input_File extends Widget_Base
         $parent_class = ['b7-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
 
-        if(builder7_is_preview()){ ?>
+        if(easy_build_cf7_light_is_preview()){ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>">
                 <?php if($settings['show_label']) { ?>
                     <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
                 <?php } ?>
-                    <?php echo wp_kses( builder7_generate_cf7_html($attributes), builder7_allow_form_attr());?>
+                    <?php echo wp_kses( easy_build_cf7_light_generate_cf7_html($attributes), easy_build_cf7_light_allow_form_attr());?>
             </div>
         <?php
         }else{ ?>
@@ -314,7 +314,7 @@ class Input_File extends Widget_Base
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
-                <?php echo wp_kses( builder7_generate_cf7_shortcode($attributes), builder7_allow_form_attr());?>
+                <?php echo wp_kses( easy_build_cf7_light_generate_cf7_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>
              
         <?php

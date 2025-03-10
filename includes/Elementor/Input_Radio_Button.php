@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7\Elementor;
+namespace EasyBuildCF7Light\Elementor;
 
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
@@ -16,19 +16,19 @@ if (!defined('ABSPATH')) {
  * This widget allows users to add and customize radio button input fields with various styling options.
  *
  * @since 1.0.0
- * @package Builder7
+ * @package EasyBuildCF7Light
  * @subpackage Elementor
  */
 class Input_Radio_Button extends Widget_Base
 {
     public function get_name()
     {
-        return 'builder-7-input-radio-button';
+        return 'easy-build-cf7-light-input-radio-button';
     }
 
     public function get_title()
     {
-        return esc_html__('Input Radio Button', 'builder7');
+        return esc_html__('Input Radio Button', 'easy-build-cf7-light');
     }
     /**
      * Get widget style dependencies.
@@ -37,7 +37,7 @@ class Input_Radio_Button extends Widget_Base
      */
     public function get_style_depends()
     {
-        return ['builder-7-style'];
+        return ['cf7-elementor-addon-style'];
     }
 
      /**
@@ -57,7 +57,7 @@ class Input_Radio_Button extends Widget_Base
      */
     public function get_categories()
     {
-        return ['builder_7_widgets'];
+        return ['easy_build_cf7_light_widgets'];
     }
 
     /**
@@ -67,7 +67,7 @@ class Input_Radio_Button extends Widget_Base
      */
     public function get_keywords()
     {
-        return ['input', 'radio', 'field', 'builder-7'];
+        return ['input', 'radio', 'field', 'easy-build-cf7-light'];
     }
 
     /**
@@ -80,13 +80,13 @@ class Input_Radio_Button extends Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('Content', 'builder7'),
+                'label' => esc_html__('Content', 'easy-build-cf7-light'),
             ]
         );
         $this->add_control(
             'field_name',
             [
-                'label' => esc_html__( 'Field Name', 'builder7' ),
+                'label' => esc_html__( 'Field Name', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'radio-'.wp_rand(100, 999),
             ]
@@ -94,16 +94,16 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'classes',
             [
-                'label' => esc_html__( 'Classes (space-separated)', 'builder7' ),
+                'label' => esc_html__( 'Classes (space-separated)', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
-                'description' => esc_html__( 'Enter classes prefixed with "class:", e.g. "cla1 cla2"', 'builder7' ),
+                'description' => esc_html__( 'Enter classes prefixed with "class:", e.g. "cla1 cla2"', 'easy-build-cf7-light' ),
             ]
         );
         $this->add_control(
             'field_id',
             [
-                'label' => esc_html__( 'Field ID', 'builder7' ),
+                'label' => esc_html__( 'Field ID', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
             ]
@@ -111,10 +111,10 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'show_label',   
             [
-                'label' => esc_html__( 'Show Label', 'builder7' ),
+                'label' => esc_html__( 'Show Label', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Yes', 'builder7' ),
-                'label_off' => esc_html__( 'No', 'builder7' ),
+                'label_on' => esc_html__( 'Yes', 'easy-build-cf7-light' ),
+                'label_off' => esc_html__( 'No', 'easy-build-cf7-light' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -122,7 +122,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'label',
             [
-                'label' => esc_html__( 'Label', 'builder7' ),
+                'label' => esc_html__( 'Label', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'First name',
                 'condition' => [
@@ -134,20 +134,20 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'selectable_values',
             [
-                'label' => esc_html__( 'Selectable values', 'builder7' ),
+                'label' => esc_html__( 'Selectable values', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 10,
-                'default' => esc_html__("Option 1\nOption 2\nOption 3", 'builder7')
+                'default' => esc_html__("Option 1\nOption 2\nOption 3", 'easy-build-cf7-light')
             ]
         );
 
         $this->add_control(
             'first_item',
             [
-                'label' => esc_html__( 'Wrap each item with a label element.', 'builder7' ),
+                'label' => esc_html__( 'Wrap each item with a label element.', 'easy-build-cf7-light' ),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__( 'Show', 'builder7' ),
-                'label_off' => esc_html__( 'Hide', 'builder7' ),
+                'label_on' => esc_html__( 'Show', 'easy-build-cf7-light' ),
+                'label_off' => esc_html__( 'Hide', 'easy-build-cf7-light' ),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -156,7 +156,7 @@ class Input_Radio_Button extends Widget_Base
         $this->start_controls_section(
             'radio_style',
             [
-                'label' => esc_html__('Radio Style', 'builder7'),
+                'label' => esc_html__('Radio Style', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -165,15 +165,15 @@ class Input_Radio_Button extends Widget_Base
            $this->add_responsive_control(
             'layout',
             [
-                'label'   => esc_html__( 'Layout', 'builder7' ),
+                'label'   => esc_html__( 'Layout', 'easy-build-cf7-light' ),
                 'type'    => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'flex' => [
-                        'title' => esc_html__( 'Flex', 'builder7' ),
+                        'title' => esc_html__( 'Flex', 'easy-build-cf7-light' ),
                         'icon'  => 'eicon-gallery-grid',
                     ],
                     'column' => [
-                        'title' => esc_html__( 'Column', 'builder7' ),
+                        'title' => esc_html__( 'Column', 'easy-build-cf7-light' ),
                         'icon'  => 'eicon-editor-list-ul',
                     ],
                 ],
@@ -186,7 +186,7 @@ class Input_Radio_Button extends Widget_Base
 		$this->add_responsive_control(
 			'item_gap',
 			[
-				'label' => esc_html__( 'Item Gap', 'builder7' ),
+				'label' => esc_html__( 'Item Gap', 'easy-build-cf7-light' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -214,7 +214,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_responsive_control(
             'radio_size',
             [
-                'label' => esc_html__('Radio Size', 'builder7'),
+                'label' => esc_html__('Radio Size', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range' => [
@@ -237,7 +237,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'radio_checked_color',
             [
-                'label' => esc_html__('Checked Color', 'builder7'),
+                'label' => esc_html__('Checked Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#4054B2',
                 'selectors' => [
@@ -251,7 +251,7 @@ class Input_Radio_Button extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'radio_typography',
-                'label' => esc_html__('Typography', 'builder7'),
+                'label' => esc_html__('Typography', 'easy-build-cf7-light'),
                 'selector' => '{{WRAPPER}} .wpcf7-radio .wpcf7-list-item-label',
             ]
         );
@@ -259,7 +259,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'radio_text_color',
             [
-                'label' => esc_html__('Text Color', 'builder7'),
+                'label' => esc_html__('Text Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#333333',
                 'selectors' => [
@@ -271,7 +271,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
 			'option_checkbox_item_gap',
 			[
-				'label' => esc_html__( 'Option Gap', 'builder7' ),
+				'label' => esc_html__( 'Option Gap', 'easy-build-cf7-light' ),
 				'type' => \Elementor\Controls_Manager::SLIDER,
 				'size_units' => [ 'px', '%', 'em', 'rem', 'custom' ],
 				'range' => [
@@ -299,7 +299,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'label_heading',
             [
-                'label' => esc_html__('Label', 'builder7'),
+                'label' => esc_html__('Label', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::HEADING,
                 'separator' => 'before',
                 'condition' => [
@@ -311,7 +311,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_control(
             'label_color',
             [
-                'label' => esc_html__('Label Color', 'builder7'),
+                'label' => esc_html__('Label Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}}  label' => 'color: {{VALUE}};',
@@ -336,7 +336,7 @@ class Input_Radio_Button extends Widget_Base
         $this->add_responsive_control(
             'label_margin',
             [
-                'label' => esc_html__('Label Margin', 'builder7'),
+                'label' => esc_html__('Label Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -363,7 +363,7 @@ class Input_Radio_Button extends Widget_Base
         $attributes['field_name'] = $settings['field_name'];
         $attributes['id'] = $settings['field_id'];
         $layout_class = $settings['layout'] === 'flex' ? 'lcf7-d-flex' : 'lcf7-d-flex lcf7-flex-direction-column';
-        $attributes['class'] = 'builder-7-form-check '.$layout_class;
+        $attributes['class'] = 'easy-build-cf7-light-form-check '.$layout_class;
         if (!empty($settings['classes'])) {
             $attributes['class'] .= ' ' . $settings['classes'];
         }
@@ -372,10 +372,10 @@ class Input_Radio_Button extends Widget_Base
         $select_values = array_map('trim', $values_explode);
         $attributes['values_select'] = '"' . implode('" "', $select_values) . '"';
         $attributes = array_filter($attributes);
-        $parent_class = ['builder-7-field-parent'];
+        $parent_class = ['easy-build-cf7-light-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
                 
-        if(builder7_is_preview()){ ?>
+        if(easy_build_cf7_light_is_preview()){ ?>
           <?php include_once __DIR__.'/layouts/radio_preview.php'; ?>
         <?php
         }else{ ?>
@@ -383,7 +383,7 @@ class Input_Radio_Button extends Widget_Base
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
-                <?php echo wp_kses(builder7_generate_cf7_shortcode($attributes), builder7_allow_form_attr()); ?>
+                <?php echo wp_kses(easy_build_cf7_light_generate_cf7_shortcode($attributes), easy_build_cf7_light_allow_form_attr()); ?>
            </div>
         <?php
         }

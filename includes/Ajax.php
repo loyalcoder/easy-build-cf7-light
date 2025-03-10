@@ -1,5 +1,6 @@
 <?php
-namespace Builder7;
+namespace EasyBuildCF7Light;
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -64,9 +65,9 @@ class Ajax_Handler {
      * @since 1.0.0
      */
     public function create_cf7_builder_post() {
-        check_ajax_referer('builder7_ajax_nonce', 'nonce');
+        check_ajax_referer('easy_build_cf7_light_ajax_nonce', 'nonce');
         if (!current_user_can('edit_posts')) {
-            wp_send_json_error(esc_html__('You do not have permission to do this.', 'builder7'));
+            wp_send_json_error(esc_html__('You do not have permission to do this.', 'easy-build-cf7-light'));
             return;
         }
         
@@ -83,7 +84,7 @@ class Ajax_Handler {
         }
         if(isset($_REQUEST['selected_layout']) && sanitize_text_field(wp_unslash($_REQUEST['selected_layout'])) !== ''){
             $selected_layout = sanitize_text_field(wp_unslash($_REQUEST['selected_layout']));
-            $path = BUILDER7_PATH . '/assets/layout/'.$selected_layout.'/data.json';
+            $path = EASY_BUILD_CF7_LIGHT_PATH . '/assets/layout/'.$selected_layout.'/data.json';
             $layout_data = $this->get_layout_date($path);
             if ($post_id) {
                 // Insert post meta
@@ -105,7 +106,7 @@ class Ajax_Handler {
         );
 
         wp_send_json_success([
-            'message' => esc_html__('Post created successfully.', 'builder7'),
+            'message' => esc_html__('Post created successfully.', 'easy-build-cf7-light'),
             'edit_url' => $edit_url
         ]);
     }
@@ -147,24 +148,24 @@ class Ajax_Handler {
      * @since 1.0.0
      */
     public function cf7_builder_sync() {
-        check_ajax_referer('builder7_ajax_nonce', 'nonce');
+        check_ajax_referer('easy_build_cf7_light_ajax_nonce', 'nonce');
         $post_id = isset($_POST['post_id']) ? intval($_POST['post_id']) : 0;
         $form_id = isset($_POST['form_id']) ? intval($_POST['form_id']) : 0;
 
         if (!$post_id || !$form_id) {
             if (!$post_id) {
-                wp_send_json_error(esc_html__('Builder Id is missing', 'builder7'));
+                wp_send_json_error(esc_html__('Builder Id is missing', 'easy-build-cf7-light'));
             }
             if (!$form_id) {
-                wp_send_json_error(esc_html__('You have not selected any form', 'builder7')); 
+                wp_send_json_error(esc_html__('You have not selected any form', 'easy-build-cf7-light')); 
             }
         }
-        $result = builder7_sync_form($post_id, $form_id);
+        $result = easy_build_cf7_light_sync_form($post_id, $form_id);
 
         if ($result) {
-            wp_send_json_success(esc_html__('Form synced successfully', 'builder7'));
+            wp_send_json_success(esc_html__('Form synced successfully', 'easy-build-cf7-light'));
         } else {
-            wp_send_json_error(esc_html__('Builder Content Not Found', 'builder7'));
+            wp_send_json_error(esc_html__('Builder Content Not Found', 'easy-build-cf7-light'));
         }
         wp_die();
     }

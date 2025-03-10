@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7\Elementor;
+namespace EasyBuildCF7Light\Elementor;
 
 use Elementor\Controls_Manager;
 use Elementor\Widget_Base;
@@ -16,7 +16,7 @@ if (!defined('ABSPATH')) {
  * This widget allows users to add and customize quiz fields with questions and answers.
  *
  * @since 1.0.0
- * @package Builder7
+ * @package EasyBuildCF7Light
  * @subpackage Elementor
  */
 class Input_Quiz extends Widget_Base
@@ -28,7 +28,7 @@ class Input_Quiz extends Widget_Base
      */
     public function get_name()
     {
-        return 'builder-7-input-quiz';
+        return 'easy-build-cf7-light-input-quiz';
     }
 
     /**
@@ -38,7 +38,7 @@ class Input_Quiz extends Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Input Quiz', 'builder7');
+        return esc_html__('Input Quiz', 'easy-build-cf7-light');
     }
 
     /**
@@ -58,7 +58,7 @@ class Input_Quiz extends Widget_Base
      */
     public function get_categories()
     {
-        return ['builder_7_widgets'];
+        return ['easy_build_cf7_light_widgets'];
     }
     /**
      * Get widget keywords.
@@ -67,7 +67,7 @@ class Input_Quiz extends Widget_Base
      */
     public function get_keywords()
     {
-        return ['quiz', 'input', 'form', 'builder-7', 'contact form 7'];
+        return ['quiz', 'input', 'form', 'easy-build-cf7-light', 'contact form 7'];
     }
     /**
      * Register widget controls.
@@ -79,14 +79,14 @@ class Input_Quiz extends Widget_Base
         $this->start_controls_section(
             'section_content',
             [
-                'label' => esc_html__('Quiz', 'builder7'),
+                'label' => esc_html__('Quiz', 'easy-build-cf7-light'),
             ]
         );
 
         $this->add_control(
             'field_name',
             [
-                'label' => esc_html__('Field Name', 'builder7'),
+                'label' => esc_html__('Field Name', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::TEXT,
                 'default' => 'quiz-'.wp_rand(100, 999),
             ]
@@ -95,7 +95,7 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'field_id',
             [
-                'label' => esc_html__('Field ID', 'builder7'),
+                'label' => esc_html__('Field ID', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
             ]
@@ -104,20 +104,20 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'classes',
             [
-                'label' => esc_html__('Classes (space-separated)', 'builder7'),
+                'label' => esc_html__('Classes (space-separated)', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::TEXT,
                 'default' => '',
-                'description' => esc_html__('Enter classes prefixed with "class:", e.g. "cla1 cla2"', 'builder7'),
+                'description' => esc_html__('Enter classes prefixed with "class:", e.g. "cla1 cla2"', 'easy-build-cf7-light'),
             ]
         );
 
         $this->add_control(
             'show_label',
             [
-                'label' => esc_html__('Show Label', 'builder7'),
+                'label' => esc_html__('Show Label', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'builder7'),
-                'label_off' => esc_html__('No', 'builder7'),
+                'label_on' => esc_html__('Yes', 'easy-build-cf7-light'),
+                'label_off' => esc_html__('No', 'easy-build-cf7-light'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -126,9 +126,9 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'label',
             [
-                'label' => esc_html__('Label', 'builder7'),
+                'label' => esc_html__('Label', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::TEXT,
-                'default' => esc_html__('Quiz', 'builder7'),
+                'default' => esc_html__('Quiz', 'easy-build-cf7-light'),
                 'condition' => [
                     'show_label' => 'yes',
                 ],
@@ -138,11 +138,11 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'field_question_and_answer',
             [
-                'label' => esc_html__('Questions and Answers', 'builder7'),
+                'label' => esc_html__('Questions and Answers', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::TEXTAREA,
                 'rows' => 5,
-                'default' => esc_html__('The capital of Brazil? | Rio', 'builder7'),
-                'description' => esc_html__('One pipe-separated question-answer pair (question|answer) per line.', 'builder7'),
+                'default' => esc_html__('The capital of Brazil? | Rio', 'easy-build-cf7-light'),
+                'description' => esc_html__('One pipe-separated question-answer pair (question|answer) per line.', 'easy-build-cf7-light'),
             ]
         );
 
@@ -150,7 +150,7 @@ class Input_Quiz extends Widget_Base
         $this->start_controls_section(
             'section_label_style',
             [
-                'label' => esc_html__('Label', 'builder7'),
+                'label' => esc_html__('Label', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
                 'condition' => [
                     'show_label' => 'yes',
@@ -169,7 +169,7 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'label_color',
             [
-                'label' => esc_html__('Color', 'builder7'),
+                'label' => esc_html__('Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .builder-7-field-parent label' => 'color: {{VALUE}};',
@@ -180,7 +180,7 @@ class Input_Quiz extends Widget_Base
         $this->add_responsive_control(
             'label_margin',
             [
-                'label' => esc_html__('Margin', 'builder7'),
+                'label' => esc_html__('Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'selectors' => [
@@ -194,7 +194,7 @@ class Input_Quiz extends Widget_Base
         $this->start_controls_section(
             'section_input_style',
             [
-                'label' => esc_html__('Input', 'builder7'),
+                'label' => esc_html__('Input', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -204,7 +204,7 @@ class Input_Quiz extends Widget_Base
         $this->start_controls_tab(
             'input_style_normal',
             [
-                'label' => esc_html__('Normal', 'builder7'),
+                'label' => esc_html__('Normal', 'easy-build-cf7-light'),
             ]
         );
 
@@ -228,7 +228,7 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'input_text_color',
             [
-                'label' => esc_html__('Text Color', 'builder7'),
+                'label' => esc_html__('Text Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .lcf7-form-control' => 'color: {{VALUE}};',
@@ -241,7 +241,7 @@ class Input_Quiz extends Widget_Base
         $this->start_controls_tab(
             'input_style_focus',
             [
-                'label' => esc_html__('Focus', 'builder7'),
+                'label' => esc_html__('Focus', 'easy-build-cf7-light'),
             ]
         );
 
@@ -265,7 +265,7 @@ class Input_Quiz extends Widget_Base
         $this->add_control(
             'input_text_color_focus',
             [
-                'label' => esc_html__('Text Color', 'builder7'),
+                'label' => esc_html__('Text Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .lcf7-form-control:focus' => 'color: {{VALUE}};',
@@ -280,7 +280,7 @@ class Input_Quiz extends Widget_Base
         $this->add_responsive_control(
             'input_padding',
             [
-                'label' => esc_html__('Padding', 'builder7'),
+                'label' => esc_html__('Padding', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
                 'separator' => 'before',
@@ -293,7 +293,7 @@ class Input_Quiz extends Widget_Base
         $this->add_responsive_control(
             'input_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'builder7'),
+                'label' => esc_html__('Border Radius', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [

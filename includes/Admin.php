@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7;
+namespace EasyBuildCF7Light;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -41,7 +41,7 @@ class Admin
     }
 
     /**
-     * Load admin content for Builder 7
+     * Load admin content for Easy Build CF7 Light
      * 
      * @since 1.0.0
      * @return void
@@ -50,7 +50,7 @@ class Admin
     {
         $screen = get_current_screen();
         $layouts = $this->layout_list();
-        $allowed_screens = ['edit-cf7-builder'];
+        $allowed_screens = ['wpcf7_contact_form'];
 
         if (isset($screen->id) && in_array($screen->id, $allowed_screens)) {
             include __DIR__ . '/Admin/views/offcanvas.php';

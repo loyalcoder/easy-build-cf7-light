@@ -1,9 +1,11 @@
 <?php
 
-namespace Builder7;
+namespace EasyBuildCF7Light;
+
 if (!defined('ABSPATH')) {
     exit;
 }
+
 /**
  * Layout trait for managing form layouts
  * 
@@ -23,56 +25,56 @@ trait Layout
         return [
             [
                 'id' => 'layout1',
-                'preview_url' => 'https://builder7.loyalcoder.com/information/',
-                'data' => 'layout1.json',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout1/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout1.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout2', 
-                'preview_url' => 'https://builder7.loyalcoder.com/contact/',
-                'data' => 'layout2.json',
+                'id' => 'layout2',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout2/preview.webp', 
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout2.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout3', 
-                'preview_url' => 'https://builder7.loyalcoder.com/contact-us/',
-                'data' => 'layout3.json',
+                'id' => 'layout3',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout3/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout3.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout4', 
-                'preview_url' => 'https://builder7.loyalcoder.com/contact-form-4/',
-                'data' => 'layout4.json',
+                'id' => 'layout4',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout4/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout4.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout5', 
-                'preview_url' => 'https://builder7.loyalcoder.com/contact-form-5/',
-                'data' => 'layout5.json',
+                'id' => 'layout5',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout5/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout5.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout6', 
-                'preview_url' => 'https://builder7.loyalcoder.com/applicant-data/',
-                'data' => 'layout6.json',
+                'id' => 'layout6',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout6/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout6.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout7', 
-                'preview_url' => 'https://builder7.loyalcoder.com/contact-form-2/',
-                'data' => 'layout7.json',
+                'id' => 'layout7',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout7/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout7.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout8', 
-                'preview_url' => 'https://builder7.loyalcoder.com/contact-form-3/',
-                'data' => 'layout8.json',
+                'id' => 'layout8',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout8/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout8.json',
                 'preview_image' => 'preview.webp'
             ],
             [
-                'id' => 'layout9', 
-                'preview_url' => 'https://builder7.loyalcoder.com/appointment/',
-                'data' => 'layout9.json',
+                'id' => 'layout9',
+                'preview_url' => EASY_BUILD_CF7_LIGHT_ASSETS . '/images/layouts/layout9/preview.webp',
+                'data' => EASY_BUILD_CF7_LIGHT_PATH . '/assets/layouts/layout9.json',
                 'preview_image' => 'preview.webp'
             ],
         ];

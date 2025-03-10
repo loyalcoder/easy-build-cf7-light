@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7;
+namespace EasyBuildCF7Light;
 
 use Elementor\Plugin;
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 /**
  * Load Elementor integration class
  * 
- * Handles Elementor widget registration and category setup
+ * Handles Elementor widget registration and category setup for Easy Build CF7 Light
  * 
  * @since 1.0.0
  */
@@ -30,7 +30,6 @@ class Load_Elementor
         add_action('elementor/editor/after_enqueue_scripts', [$this, 'custom_elementor_scripts']);
     }
 
-
     /**
      * Enqueue custom scripts for Elementor editor
      * 
@@ -43,7 +42,7 @@ class Load_Elementor
 
         foreach ($scripts as $handle => $script) {
             $deps    = isset($script['deps']) ? $script['deps'] : false;
-            $version = isset($script['version']) ? $script['version'] : BUILDER7_VERSION;
+            $version = isset($script['version']) ? $script['version'] : EASY_BUILD_CF7_LIGHT_VERSION;
             wp_register_script($handle, $script['src'], $deps, $version, true);
             wp_enqueue_script($handle);
         }
@@ -61,20 +60,20 @@ class Load_Elementor
     {
         global $post;
 
-        // Add 'Builder 7 ShortCode' category for all post types
+        // Add 'Easy Build CF7 Light' category for all post types
         $elementor->add_category(
-            'builder-7-shortcode',
+            'easy-build-cf7-light-shortcode',
             [
-                'title' => esc_html__('Builder 7 ShortCode', 'builder7'),
-                'icon'  => 'eicon-font',
+                'title' => esc_html__('Easy Build CF7 Light ShortCode', 'easy-build-cf7-light'),
+                'icon'  => 'eicon-form-horizontal',
             ]
         );
 
         $elementor->add_category(
-            'builder_7_widgets',
+            'easy_build_cf7_light_widgets',
             [
-                'title' => esc_html__('Builder 7', 'builder7'),
-                'icon'  => 'eicon-font',
+                'title' => esc_html__('Easy Build CF7 Light', 'easy-build-cf7-light'),
+                'icon'  => 'eicon-form-horizontal',
             ]
         );
         return $elementor;
@@ -88,8 +87,6 @@ class Load_Elementor
      */
     public function register_widgets()
     {
-       // $this->includeWidgetsFiles();
-
         Plugin::instance()->widgets_manager->register(new Elementor\Input_Text());
         Plugin::instance()->widgets_manager->register(new Elementor\Input_Email());
         Plugin::instance()->widgets_manager->register(new Elementor\Input_Url());
@@ -127,11 +124,11 @@ class Load_Elementor
     public function get_scripts()
     {
         return [
-            // 'builder7' => [
-            //     'src'     => BUILDER7_ASSETS . '/js/builder7.js',
-            //     'version' => filemtime(BUILDER7_PATH . '/assets/js/builder7.js'),
-            //     'deps'    => ['jquery']
-            // ],
+            'easy-build-cf7-light' => [
+                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/js/easy-build-cf7-light.js',
+                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/js/easy-build-cf7-light.js'),
+                'deps'    => ['jquery']
+            ],
         ];
     }
 
@@ -144,10 +141,10 @@ class Load_Elementor
     public function getStyles()
     {
         return [
-            // 'builder7' => [
-            //     'src'     => BUILDER7_ASSETS . '/css/builder7.css',
-            //     'version' => filemtime(BUILDER7_PATH . '/assets/css/builder7.css'),
-            // ]
+            'easy-build-cf7-light' => [
+                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/css/easy-build-cf7-light.css',
+                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/css/easy-build-cf7-light.css'),
+            ]
         ];
     }
 
@@ -159,9 +156,7 @@ class Load_Elementor
      */
     public static function getWidgetList()
     {
-        return [
-            'Hello_World',
-        ];
+        return [];
     }
 
     /**
@@ -181,25 +176,22 @@ class Load_Elementor
         }
 
         foreach ($widget_list as $handle => $widget) {
-            $file = BUILDER7_ELEMENTOR . $widget . '.php';
+            $file = EASY_BUILD_CF7_LIGHT_ELEMENTOR . $widget . '.php';
             if (file_exists($file)) {
-                continue;
+                require_once $file;
             }
-            require_once $file;
         }
 
         foreach ($scripts as $handle => $script) {
             $deps    = isset($script['deps']) ? $script['deps'] : false;
-            $version = isset($script['version']) ? $script['version'] : BUILDER7_VERSION;
+            $version = isset($script['version']) ? $script['version'] : EASY_BUILD_CF7_LIGHT_VERSION;
             wp_register_script($handle, $script['src'], $deps, $version, true);
-            // wp_enqueue_script($handle);
         }
 
         foreach ($styles as $handle => $style) {
             $deps = isset($style['deps']) ? $style['deps'] : false;
-            $version = isset($style['version']) ? $style['version'] : BUILDER7_VERSION;
+            $version = isset($style['version']) ? $style['version'] : EASY_BUILD_CF7_LIGHT_VERSION;
             wp_register_style($handle, $style['src'], $deps, $version);
-            // wp_enqueue_style($handle);
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7\Admin;
+namespace EasyBuildCF7Light\Admin;
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -48,8 +48,8 @@ class Handler
         $date_column_index = array_search('date', array_keys($columns));
         foreach ($columns as $key => $value) {
             if ($key === 'date') {
-                $new_columns['cf7_form_title'] = esc_html__('Contact Form Title', 'builder7');
-                $new_columns['cf7_builder_sync'] = esc_html__('Sync To Cf7', 'builder7');
+                $new_columns['cf7_form_title'] = esc_html__('Contact Form Title', 'easy-build-cf7-light');
+                $new_columns['cf7_builder_sync'] = esc_html__('Sync To Cf7', 'easy-build-cf7-light');
             }
             $new_columns[$key] = $value;
         }

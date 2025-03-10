@@ -1,14 +1,14 @@
 <?php 
-    if (!defined('ABSPATH')) {
-        exit;
-    }
+if (!defined('ABSPATH')) {
+    exit;
+}
 ?>
 <div class="l-cf7-field-parent" data-custom-validation="">
     <?php if($settings['show_label']) { ?>
         <p><label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label><br>
     <?php } ?>
     <span class="wpcf7-form-control-wrap" data-name="<?php echo esc_attr($attributes['field_name']); ?>">
-        <span class="wpcf7-form-control wpcf7-radio cf7-e-addon lcf7-form-check <?php echo esc_attr($layout_class); ?>">
+        <span class="wpcf7-form-control wpcf7-radio easy-build-cf7-light-form-check <?php echo esc_attr($layout_class); ?>">
             <?php 
             foreach($select_values as $index => $value) {
                 $item_class = '';

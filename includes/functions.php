@@ -1,37 +1,37 @@
 <?php
-    // If this file is called directly, abort.
-    if (!defined('ABSPATH')) {
-        die;
-    }
+// If this file is called directly, abort.
+if (!defined('ABSPATH')) {
+    die;
+}
+
+/**
+ * Functions for Easy Build CF7 Light
+ *
+ * This file contains helper functions for the Easy Build CF7 Light plugin.
+ * It includes functions for generating CF7 shortcodes and HTML, checking preview mode,
+ * syncing forms between Elementor and CF7, and other utility functions.
+ *
+ * @package EasyBuildCF7Light
+ * @since 1.0.0
+ */
+
+if(!function_exists('cf7_form_is_preview')){
     /**
-     * Functions for Contact Form 7 Elementor Addon
+     * Check if current page is being viewed in Elementor editor or preview mode
+     * 
+     * This function checks whether the current page is being edited in Elementor's editor
+     * or being viewed in preview mode. This is useful for conditionally rendering different
+     * content in the editor vs the frontend.
      *
-     * This file contains helper functions for the Contact Form 7 Elementor Addon plugin.
-     * It includes functions for generating CF7 shortcodes and HTML, checking preview mode,
-     * syncing forms between Elementor and CF7, and other utility functions.
-     *
-     * @package Builder7
      * @since 1.0.0
+     * @return boolean True if in Elementor editor/preview mode, false otherwise
      */
-
-    if(!function_exists('builder7_is_preview')){
-        /**
-         * Check if current page is being viewed in Elementor editor or preview mode
-         * 
-         * This function checks whether the current page is being edited in Elementor's editor
-         * or being viewed in preview mode. This is useful for conditionally rendering different
-         * content in the editor vs the frontend.
-         *
-         * @since 1.0.0
-         * @return boolean True if in Elementor editor/preview mode, false otherwise
-         */
-        
-        function builder7_is_preview() {
-            return \Elementor\Plugin::$instance->editor->is_edit_mode() || is_preview();
-        }
+    function cf7_form_is_preview() {
+        return \Elementor\Plugin::$instance->editor->is_edit_mode() || is_preview();
     }
+}
 
-if (!function_exists('builder7_generate_cf7_shortcode')) {
+if (!function_exists('cf7_form_generate_shortcode')) {
     /**
      * Generates Contact Form 7 shortcode from attributes array
      * 
@@ -43,7 +43,8 @@ if (!function_exists('builder7_generate_cf7_shortcode')) {
      * @param array $attributes Array of field attributes
      * @return string Generated CF7 shortcode
      */
-    function builder7_generate_cf7_shortcode( $attributes ) {
+    function cf7_form_generate_shortcode( $attributes ) {
+        // Rest of function body remains the same, just renamed
         $field_start = '['; 
         $field_end = ']'; 
         $field_attr = '';
@@ -125,15 +126,16 @@ if (!function_exists('builder7_generate_cf7_shortcode')) {
             return '['.$field_attr.'] '.$attributes['field_condition'].' [/acceptance]';
         }
         return $field_start.$field_attr.$field_end;
-        }
     }
-if (!function_exists('builder7_allow_form_attr')) {
+}
+
+if (!function_exists('cf7_form_allow_form_attr')) {
     /**
      * Defines allowed HTML attributes for form elements
      * 
      * @return array Array of allowed HTML attributes for form inputs
      */
-    function builder7_allow_form_attr() {
+    function cf7_form_allow_form_attr() {
         $allowedposttags['input'] = [
             'type' => true,
             'required' => true,
@@ -163,51 +165,51 @@ if (!function_exists('builder7_allow_form_attr')) {
             'data-*' => true,
         ];
         return $allowedposttags;
-        }
     }
-    if (!function_exists('builder7_generate_cf7_html')) {
-        /**
-         * Generates HTML for Contact Form 7 input fields
-         * 
-         * @param array $attributes Array of field attributes
-         * @return string Generated HTML input element
-         */
-        function builder7_generate_cf7_html( $attributes ) {
-            $field_attr = '';
-            if(!empty($attributes)){
-                foreach($attributes as $key => $value){
-                    switch($key){
-                        case 'type':
-                            $field_attr .= ' type="' . $value . '"';
-                            break;
-                        case 'class':
-                            $class_values = explode(' ', $value); 
-                            $class_values_store = '';                   
-                            foreach ($class_values as $class) {
-                                $class_values_store .= ' '.$class;
-                            }
-                            $field_attr .= ' class="' . $class_values_store . '"';
-                            break;
-                        case 'placeholder_preview':
-                            $field_attr .= $value;
-                            break;
-                        default:
-                            break;
-                    }
+}
+
+if (!function_exists('cf7_form_generate_html')) {
+    /**
+     * Generates HTML for Contact Form 7 input fields
+     * 
+     * @param array $attributes Array of field attributes
+     * @return string Generated HTML input element
+     */
+    function cf7_form_generate_html( $attributes ) {
+        $field_attr = '';
+        if(!empty($attributes)){
+            foreach($attributes as $key => $value){
+                switch($key){
+                    case 'type':
+                        $field_attr .= ' type="' . $value . '"';
+                        break;
+                    case 'class':
+                        $class_values = explode(' ', $value); 
+                        $class_values_store = '';                   
+                        foreach ($class_values as $class) {
+                            $class_values_store .= ' '.$class;
+                        }
+                        $field_attr .= ' class="' . $class_values_store . '"';
+                        break;
+                    case 'placeholder_preview':
+                        $field_attr .= $value;
+                        break;
+                    default:
+                        break;
                 }
-            }       
-            return '<input' . $field_attr . '>';
-        }
+            }
+        }       
+        return '<input' . $field_attr . '>';
     }
+}
 
-
-if (!function_exists('builder7_get_cf7_forms')) {
+if (!function_exists('cf7_form_get_forms')) {
     /**
      * Gets all Contact Form 7 forms
      * 
      * @return array Array of forms with id and title
      */
-    function builder7_get_cf7_forms() {
+    function cf7_form_get_forms() {
         $args = array(
             'post_type'      => 'wpcf7_contact_form',
             'posts_per_page' => -1,
@@ -226,28 +228,27 @@ if (!function_exists('builder7_get_cf7_forms')) {
         }
         
         return $forms;
-        }
     }
-    if(!function_exists('builder7_sync_form')){
-        /**
-         * Syncs Elementor content to Contact Form 7 form content
-         * 
-         * @param int $post_id The ID of the Elementor post/page
-         * @param int $cf7_form_id The ID of the Contact Form 7 form
-         * @return bool True if sync was successful, false otherwise
-         */
-        function builder7_sync_form($post_id, $cf7_form_id){
-            // Check if Elementor is active
-            if (!did_action('elementor/loaded')) {
-                return '';
-            }
-            $elementor_content = \Elementor\Plugin::$instance->frontend->get_builder_content($post_id, true);
-            if (!empty($elementor_content) && !empty($cf7_form_id)) {
-                update_post_meta($cf7_form_id, '_form', $elementor_content);
-                return true;
-            }
-            return false;
+}
+
+if(!function_exists('easy_build_cf7_light_sync_form')){
+    /**
+     * Syncs Elementor content to Contact Form 7 form content
+     * 
+     * @param int $post_id The ID of the Elementor post/page
+     * @param int $cf7_form_id The ID of the Contact Form 7 form
+     * @return bool True if sync was successful, false otherwise
+     */
+    function easy_build_cf7_light_sync_form($post_id, $cf7_form_id){
+        // Check if Elementor is active
+        if (!did_action('elementor/loaded')) {
+            return '';
         }
+        $elementor_content = \Elementor\Plugin::$instance->frontend->get_builder_content($post_id, true);
+        if (!empty($elementor_content) && !empty($cf7_form_id)) {
+            update_post_meta($cf7_form_id, '_form', $elementor_content);
+            return true;
+        }
+        return false;
     }
-
-
+}

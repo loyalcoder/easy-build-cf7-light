@@ -1,6 +1,6 @@
 <?php
 
-namespace Builder7\Admin;
+namespace EasyBuildCF7Light\Admin;
 if (!defined('ABSPATH')) {
     exit;
 }
