@@ -539,7 +539,7 @@ class Input_Textarea extends Widget_Base
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
-                <?php echo wp_kses( easy_build_cf7_light_generate_cf7_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
+                <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>
         <?php
         }
