@@ -537,12 +537,12 @@ class Input_Email extends Widget_Base
         $parent_class = ['l-cf7-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
         
-        if(builder7_is_preview()){ ?>
+        if(easy_build_cf7_light_is_preview()){ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
-                 <?php echo wp_kses( builder7_generate_cf7_html($attributes), builder7_allow_form_attr());?>
+                 <?php echo wp_kses( easy_build_cf7_light_generate_html($attributes), easy_build_cf7_light_allow_form_attr());?>
             </div>
          <?php
          }else{ ?>
@@ -550,7 +550,7 @@ class Input_Email extends Widget_Base
              <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
-                 <?php echo wp_kses( builder7_generate_cf7_shortcode($attributes), builder7_allow_form_attr());?>
+                 <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
             </div>
               
          <?php
