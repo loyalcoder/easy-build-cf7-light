@@ -155,6 +155,6 @@ class Generator {
         } else {
             return;
         }
-        builder7_sync_form($post_id, $selected_form_id);
+        easy_build_cf7_light_sync_form($post_id, $selected_form_id);
     } 
 }

@@ -123,13 +123,7 @@ class Load_Elementor
      */
     public function get_scripts()
     {
-        return [
-            'easy-build-cf7-light' => [
-                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/js/easy-build-cf7-light.js',
-                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/js/easy-build-cf7-light.js'),
-                'deps'    => ['jquery']
-            ],
-        ];
+        return [];
     }
 
     /**
@@ -140,12 +134,7 @@ class Load_Elementor
      */
     public function getStyles()
     {
-        return [
-            'easy-build-cf7-light' => [
-                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/css/easy-build-cf7-light.css',
-                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/css/easy-build-cf7-light.css'),
-            ]
-        ];
+        return [];
     }
 
     /**

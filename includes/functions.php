@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
  * @since 1.0.0
  */
 
-if(!function_exists('cf7_form_is_preview')){
+if(!function_exists('easy_build_cf7_light_is_preview')){
     /**
      * Check if current page is being viewed in Elementor editor or preview mode
      * 
@@ -26,12 +26,12 @@ if(!function_exists('cf7_form_is_preview')){
      * @since 1.0.0
      * @return boolean True if in Elementor editor/preview mode, false otherwise
      */
-    function cf7_form_is_preview() {
+    function easy_build_cf7_light_is_preview() {
         return \Elementor\Plugin::$instance->editor->is_edit_mode() || is_preview();
     }
 }
 
-if (!function_exists('cf7_form_generate_shortcode')) {
+if (!function_exists('easy_build_cf7_light_generate_shortcode')) {
     /**
      * Generates Contact Form 7 shortcode from attributes array
      * 
@@ -43,7 +43,7 @@ if (!function_exists('cf7_form_generate_shortcode')) {
      * @param array $attributes Array of field attributes
      * @return string Generated CF7 shortcode
      */
-    function cf7_form_generate_shortcode( $attributes ) {
+    function easy_build_cf7_light_generate_shortcode( $attributes ) {
         // Rest of function body remains the same, just renamed
         $field_start = '['; 
         $field_end = ']'; 
@@ -129,13 +129,13 @@ if (!function_exists('cf7_form_generate_shortcode')) {
     }
 }
 
-if (!function_exists('cf7_form_allow_form_attr')) {
+if (!function_exists('easy_build_cf7_light_allow_form_attr')) {
     /**
      * Defines allowed HTML attributes for form elements
      * 
      * @return array Array of allowed HTML attributes for form inputs
      */
-    function cf7_form_allow_form_attr() {
+    function easy_build_cf7_light_allow_form_attr() {
         $allowedposttags['input'] = [
             'type' => true,
             'required' => true,
@@ -168,14 +168,14 @@ if (!function_exists('cf7_form_allow_form_attr')) {
     }
 }
 
-if (!function_exists('cf7_form_generate_html')) {
+if (!function_exists('easy_build_cf7_light_generate_html')) {
     /**
      * Generates HTML for Contact Form 7 input fields
      * 
      * @param array $attributes Array of field attributes
      * @return string Generated HTML input element
      */
-    function cf7_form_generate_html( $attributes ) {
+    function easy_build_cf7_light_generate_html( $attributes ) {
         $field_attr = '';
         if(!empty($attributes)){
             foreach($attributes as $key => $value){
@@ -203,13 +203,13 @@ if (!function_exists('cf7_form_generate_html')) {
     }
 }
 
-if (!function_exists('cf7_form_get_forms')) {
+if (!function_exists('easy_build_cf7_light_get_forms')) {
     /**
      * Gets all Contact Form 7 forms
      * 
      * @return array Array of forms with id and title
      */
-    function cf7_form_get_forms() {
+    function easy_build_cf7_light_get_forms() {
         $args = array(
             'post_type'      => 'wpcf7_contact_form',
             'posts_per_page' => -1,
