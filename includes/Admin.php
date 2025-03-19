@@ -48,10 +48,9 @@ class Admin
      */
     public function add_offcanvas()
     {
-        $screen = get_current_screen();
+        $screen = get_current_screen();                
         $layouts = $this->layout_list();
-        $allowed_screens = ['wpcf7_contact_form'];
-
+        $allowed_screens = ['edit-easy-build-cf7'];
         if (isset($screen->id) && in_array($screen->id, $allowed_screens)) {
             include __DIR__ . '/Admin/views/offcanvas.php';
         }

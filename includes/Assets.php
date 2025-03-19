@@ -98,7 +98,7 @@ class Assets
     {
         $screen = get_current_screen();
 
-        $allowed_admin = ['edit-cf7-builder', 'toplevel_page_wpcf7', 'cf7-builder'];
+        $allowed_admin = ['edit-easy-build-cf7', 'toplevel_page_wpcf7', 'easy-build-cf7'];
         // Only load on plugin admin pages
         if (in_array($screen->id, $allowed_admin)) {
             wp_enqueue_style(
@@ -122,7 +122,7 @@ class Assets
                 filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/adminAjax.bundle.js'),
                 true
             );
-            wp_localize_script('easy-build-cf7-light-ajax', 'easyBuildCF7LightAjaxObject', array(
+            wp_localize_script('easy-build-cf7-light-ajax', 'easyBuilderCf7lightObj', array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'nonce'   => wp_create_nonce('easy_build_cf7_light_ajax_nonce')
             ));
@@ -142,7 +142,7 @@ class Assets
                 [],
                 filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/sync.css')
             );
-            wp_localize_script('easy-build-cf7-light-ajax', 'easyBuildCF7LightAjaxObject', array(
+            wp_localize_script('easy-build-cf7-light-sync', 'easyBuilderCf7lightObj', array(
                 'ajaxurl' => admin_url('admin-ajax.php'),
                 'nonce'   => wp_create_nonce('easy_build_cf7_light_ajax_nonce')
             ));

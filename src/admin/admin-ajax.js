@@ -4,13 +4,13 @@ jQuery(function($){
         e.preventDefault();
         var formData = new FormData();
         formData.append('action', 'create_cf7_builder_post');
-        formData.append('nonce', builder7AjaxObject.nonce);
+        formData.append('nonce', easyBuilderCf7lightObj.nonce);
         formData.append('title', $('#cf7-title').val());
         formData.append('cf7_form_id', $('#cf7-select').val());
         formData.append('selected_layout', $('#selected-layout').val());
 
         $.ajax({
-            url: builder7AjaxObject.ajaxurl,
+            url: easyBuilderCf7lightObj.ajaxurl,
             type: 'POST',
             data: formData,
             processData: false,
@@ -34,10 +34,9 @@ jQuery(function($){
     });
     $(document).on('click', '.cf7-builder-sync', function(e) {
         e.preventDefault();
-        
         var data = {
             action: 'cf7_builder_sync',
-            nonce: builder7AjaxObject.nonce,
+            nonce: easyBuilderCf7lightObj.nonce,
             post_id: $(this).data('post-id'),
             form_id: $(this).data('form-id'),
         };
@@ -45,7 +44,7 @@ jQuery(function($){
         showCustomAlert('loading', 'Syncing', 'Please wait while we sync your form.');
     
         $.ajax({
-            url: builder7AjaxObject.ajaxurl,
+            url: easyBuilderCf7lightObj.ajaxurl,
             type: 'POST',
             data: data,
             success: function(response) {
@@ -71,8 +70,8 @@ function showCustomAlert(type, title, message) {
     const alertTitle = document.getElementById('alert-title');
     const alertMessage = document.getElementById('alert-message');
     const alertButton = document.getElementById('alert-button');
-
-    alertIcon.className = 'alert-icon ' + type;
+    console.log(type);
+    alertIcon.className = 'alert-icon ';
     alertTitle.textContent = title;
     alertMessage.textContent = message;
 

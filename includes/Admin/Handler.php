@@ -26,8 +26,8 @@ class Handler
      */
     function __construct()
     {
-        add_filter('manage_cf7-builder_posts_columns', [$this, 'add_cf7_builder_column']);
-        add_action('manage_cf7-builder_posts_custom_column', [$this, 'render_cf7_builder_column'], 10, 2);
+        add_filter('manage_easy-build-cf7_posts_columns', [$this, 'add_cf7_builder_column']);
+        add_action('manage_easy-build-cf7_posts_custom_column', [$this, 'render_cf7_builder_column'], 10, 2);
     }
 
 
@@ -71,7 +71,7 @@ class Handler
     public function render_cf7_builder_column($column_name, $post_id)
     {
         if ($column_name === 'cf7_form_title') {
-            $selected_form_id = get_post_meta($post_id, '_cf7_form_id', true);
+            $selected_form_id = get_post_meta($post_id, '_easy_build_cf7_form_id', true);
             if ($selected_form_id) {
                 $form = get_post($selected_form_id);
                 echo esc_html($form ? $form->post_title : '');
@@ -79,7 +79,7 @@ class Handler
         }
         
         if ($column_name === 'cf7_builder_sync') {
-            $selected_form_id = get_post_meta($post_id, '_cf7_form_id', true);
+            $selected_form_id = get_post_meta($post_id, '_easy_build_cf7_form_id', true);
             ?>
             <a href="javascript:void(0)" type="button" class="button button-secondary cf7-builder-sync" data-post-id="<?php echo esc_attr($post_id); ?>" data-form-id="<?php echo esc_attr($selected_form_id); ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="20px" width="20px" version="1.1" id="Layer_1" viewBox="0 0 511.979 511.979" xml:space="preserve">

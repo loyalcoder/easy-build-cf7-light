@@ -26,7 +26,7 @@
           <label for="cf7-select"><?php echo esc_html__('Select Contact Form 7:', 'easy-build-cf7-light'); ?></label>
           <select id="cf7-select" name="cf7-select">
             <option value=""><?php echo esc_html__('Select a form', 'easy-build-cf7-light'); ?></option>
-            <?php foreach (easy_build_cf7_light_get_cf7_forms() as $form) : ?>
+            <?php foreach (easy_build_cf7_light_get_forms() as $form) : ?>
               <option value="<?php echo esc_attr($form['id']); ?>"><?php echo esc_html($form['title']); ?></option>
             <?php endforeach; ?>
           </select>

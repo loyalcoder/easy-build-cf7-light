@@ -39,12 +39,12 @@ jQuery(document).ready(function($) {
         e.preventDefault();
         var data = {
             action: 'cf7_builder_sync',
-            nonce: builder7AjaxObject.nonce,
+            nonce: easyBuilderCf7lightObj.nonce,
             post_id: $(this).data('post-id'),
             form_id: $(this).data('form-id'),
         };
         $.ajax({
-            url: builder7AjaxObject.ajaxurl,
+            url: easyBuilderCf7lightObj.ajaxurl,
             type: 'POST',
             data: data,
             success: function(response) {
