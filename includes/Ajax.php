@@ -76,7 +76,7 @@ class Ajax_Handler {
         $post_id = wp_insert_post([
             'post_title'  => $title,
             'post_status' => 'publish',
-            'post_type'   => 'cf7-builder'
+            'post_type'   => 'easy-build-cf7'
         ]);
         if (is_wp_error($post_id)) {
             wp_send_json_error($post_id->get_error_message());
