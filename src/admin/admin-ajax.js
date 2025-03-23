@@ -70,7 +70,6 @@ function showCustomAlert(type, title, message) {
     const alertTitle = document.getElementById('alert-title');
     const alertMessage = document.getElementById('alert-message');
     const alertButton = document.getElementById('alert-button');
-    console.log(type);
     alertIcon.className = 'alert-icon ' + type;
     alertTitle.textContent = title;
     alertMessage.textContent = message;

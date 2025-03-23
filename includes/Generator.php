@@ -85,19 +85,15 @@ class Generator {
 
         $builder_pages = get_posts($args);
 
-        if (!empty($builder_pages)) {
-            echo '<ul>';
-            foreach ($builder_pages as $page) {
-                printf(
-                    '<li><a href="%s">%s</a></li>',
-                    esc_url(get_edit_post_link($page->ID)),
-                    esc_html($page->post_title)
-                );
-            }
-            echo '</ul>';
-        } else {
-            echo '<p>' . esc_html__('No builder pages found for this form.', 'easy-build-cf7-light') . '</p>';
-        }
+        if (!empty($builder_pages)) : ?>
+            <ul>
+            <?php foreach ($builder_pages as $page) : ?>
+                <li><a href="<?php echo esc_url(get_edit_post_link($page->ID)); ?>"><?php echo esc_html($page->post_title); ?></a></li>
+            <?php endforeach; ?>
+            </ul>
+        <?php else : ?>
+            <p><?php echo esc_html__('No builder pages found for this form.', 'easy-build-cf7-light'); ?></p>
+        <?php endif;
     }
 
     /**

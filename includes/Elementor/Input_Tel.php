@@ -86,18 +86,6 @@ class Input_Tel extends Widget_Base
             ]
         );
         $this->add_control(
-            'custom_validation_message',
-            [
-                'label' => esc_html__( 'Custom Validation Message', 'easy-build-cf7-light' ),
-                'type' => Controls_Manager::TEXT,
-                'default' => '',
-                'label_block' => true,
-                'condition' => [
-                    'is_required' => 'required',
-                ],
-            ]
-        );
-        $this->add_control(
             'classes',
             [
                 'label' => esc_html__( 'Classes (space-separated)', 'easy-build-cf7-light' ),
@@ -517,7 +505,7 @@ class Input_Tel extends Widget_Base
            </div>
         <?php
         }else{ ?>
-            <div class="<?php echo esc_attr($parent_class_joined); ?>" data-custom-validation="<?php echo esc_attr($settings['custom_validation_message']); ?>">
+            <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
@@ -530,27 +518,6 @@ class Input_Tel extends Widget_Base
     }
     protected function content_template()
     {
-        ?>
-        <# 
-        var parent_class = ['l-cf7-field-parent'];
-        var parent_class_joined = parent_class.join(' ');
-        var placeholder = settings.default_value_as_placeholder ? ' placeholder="' + settings.default_value + '"' : ' value="' + settings.default_value + '"';
-        #>
-        <div class="{{ parent_class_joined }}">
-            <# if(settings.show_label == 'yes') { #>
-                <label for="{{ settings.field_id }}">{{{ settings.label }}}</label>
-            <# } #>
-            <input type="tel" 
-                class="lcf7-e-addon lcf7-form-control {{ settings.classes }}"
-                <# if(settings.field_id) { #>id="{{ settings.field_id }}"<# } #>
-                <# if(settings.field_name) { #>name="{{ settings.field_name }}"<# } #>
-                <# if(settings.is_required) { #>required<# } #>
-                <# if(settings.minlength) { #>minlength="{{ settings.minlength }}"<# } #>
-                <# if(settings.maxlength) { #>maxlength="{{ settings.maxlength }}"<# } #>
-                {{{ placeholder }}}
-            />
-        </div>
-        <?php 
         
     }
 }

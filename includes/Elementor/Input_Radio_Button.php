@@ -200,10 +200,6 @@ class Input_Radio_Button extends Widget_Base
 						'max' => 100,
 					],
 				],
-				// 'default' => [
-				// 	'unit' => 'px',
-				// 	'size' => 20,
-				// ],
 				'selectors' => [
 					'{{WRAPPER}}  .lcf7-flex-direction-column' => 'row-gap: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .lcf7-d-flex' => 'column-gap: {{SIZE}}{{UNIT}};',

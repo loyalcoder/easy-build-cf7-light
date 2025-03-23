@@ -88,18 +88,6 @@ class Input_Number extends Widget_Base
                 'default'      => '',
             ]
         );
-        $this->add_control(
-            'custom_validation_message',
-            [
-                'label'       => esc_html__( 'Custom Validation Message', 'easy-build-cf7-light' ),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => '',
-                'label_block' => true,
-                'condition'   => [
-                    'is_required' => 'required',
-                ],
-            ]
-        );
         
         $this->add_control(
             'classes',
@@ -634,7 +622,7 @@ class Input_Number extends Widget_Base
            </div>
         <?php
         }else{ ?>
-            <div class = "<?php echo esc_attr($parent_class_joined); ?>" data-custom-validation = "<?php echo esc_attr($settings['custom_validation_message']); ?>">
+            <div class = "<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
                 <label for = "<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>

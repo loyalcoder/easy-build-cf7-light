@@ -338,7 +338,7 @@ class Input_Quiz extends Widget_Base
             </div>
          <?php
          }else{ ?>
-             <div class="<?php echo esc_attr($parent_class_joined); ?>" data-custom-validation="<?php echo esc_attr($settings['custom_validation_message']); ?>">
+             <div class="<?php echo esc_attr($parent_class_joined); ?>">
              <?php if($settings['show_label']) { ?>
                  <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
              <?php } ?>
