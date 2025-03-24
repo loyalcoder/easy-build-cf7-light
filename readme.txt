@@ -1,8 +1,8 @@
-=== Easy Build CF7 Light ===
+=== Easy Build CF7 Light - Elementor Addon for Contact Form 7 ===
 Contributors: loyalcoder
-Tags: contact form 7, elementor, form builder, contact form, cf7, drag and drop, visual builder, form designer
+Tags: contact form 7, elementor, form builder, cf7, visual builder
 Requires at least: 5.0
-Tested up to: 6.4.2
+Tested up to: 6.7
 Stable tag: 1.0.0
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -51,5 +51,3 @@ To set up the development environment:
    cd easy-build-cf7-light
    npm install
    ```
-
-

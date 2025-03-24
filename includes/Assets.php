@@ -39,11 +39,6 @@ class Assets
                 'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/js/frontend.js',
                 'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/js/frontend.js'),
                 'deps'    => ['jquery']
-            ],
-            'easy-build-cf7-light-enquiry-script' => [
-                'src'     => EASY_BUILD_CF7_LIGHT_ASSETS . '/dist/bundle.js',
-                'version' => filemtime(EASY_BUILD_CF7_LIGHT_PATH . '/assets/dist/bundle.js'),
-                'deps'    => ['jquery']
             ]
         ];
     }
