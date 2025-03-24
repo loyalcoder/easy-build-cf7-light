@@ -1,0 +1,979 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy Build CF7 Light - Elementor Addon for Contact Form "
+"7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-24 18:02+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.7.1; wp-6.7.2\n"
+"X-Domain: easy-build-cf7-light"
+
+#: includes/Elementor/Input_Acceptance.php:77
+msgid " This checkbox is optional."
+msgstr ""
+
+#: includes/Elementor/Input_Drop_down_menu.php:148
+msgid " Use the first item as a label."
+msgstr ""
+
+#: includes/Elementor/Input_File.php:145
+msgid "1mb"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:132
+msgid "Acceptable file types"
+msgstr ""
+
+#: includes/Elementor/Input_Acceptance.php:232
+msgid "Acceptance Text"
+msgstr ""
+
+#: includes/Generator.php:28
+msgid "Add New"
+msgstr ""
+
+#: includes/Generator.php:29
+msgid "Add New CF7 Builder"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:284
+#: includes/Elementor/Input_Email.php:414
+#: includes/Elementor/Input_Textarea.php:263
+#: includes/Elementor/Input_Textarea.php:397
+#: includes/Elementor/Input_Tel.php:264 includes/Elementor/Input_Tel.php:394
+#: includes/Elementor/Input_Submit.php:128
+#: includes/Elementor/Input_Date.php:241 includes/Elementor/Input_Date.php:371
+#: includes/Elementor/Input_Url.php:285 includes/Elementor/Input_Url.php:415
+#: includes/Elementor/Input_Number.php:373
+#: includes/Elementor/Input_Number.php:507
+#: includes/Elementor/Input_Text.php:300 includes/Elementor/Input_Text.php:430
+msgid "Alignment"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:135
+msgid "audio/*|video/*|image/*"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:187
+#: includes/Elementor/Input_Submit.php:250
+msgid "Background"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:234
+#: includes/Elementor/Input_Email.php:332
+#: includes/Elementor/Input_Textarea.php:213
+#: includes/Elementor/Input_Textarea.php:315
+#: includes/Elementor/Input_Tel.php:214 includes/Elementor/Input_Tel.php:312
+#: includes/Elementor/Contact_Form.php:136
+#: includes/Elementor/Contact_Form.php:181
+#: includes/Elementor/Input_Drop_down_menu.php:187
+#: includes/Elementor/Input_File.php:218 includes/Elementor/Input_Date.php:191
+#: includes/Elementor/Input_Date.php:289 includes/Elementor/Input_Url.php:235
+#: includes/Elementor/Input_Url.php:333 includes/Elementor/Input_Number.php:323
+#: includes/Elementor/Input_Number.php:424
+#: includes/Elementor/Input_Text.php:250 includes/Elementor/Input_Text.php:348
+msgid "Background Color"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:259
+msgid "Border Color"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:253
+#: includes/Elementor/Input_Email.php:351
+#: includes/Elementor/Input_Textarea.php:232
+#: includes/Elementor/Input_Textarea.php:334
+#: includes/Elementor/Input_Tel.php:233 includes/Elementor/Input_Tel.php:331
+#: includes/Elementor/Contact_Form.php:254
+#: includes/Elementor/Input_Drop_down_menu.php:206
+#: includes/Elementor/Input_Submit.php:204
+#: includes/Elementor/Input_File.php:237 includes/Elementor/Input_Date.php:210
+#: includes/Elementor/Input_Date.php:308 includes/Elementor/Input_Url.php:254
+#: includes/Elementor/Input_Url.php:352 includes/Elementor/Input_Number.php:342
+#: includes/Elementor/Input_Number.php:443
+#: includes/Elementor/Input_Quiz.php:296 includes/Elementor/Input_Text.php:269
+#: includes/Elementor/Input_Text.php:367
+msgid "Border Radius"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:277
+#: includes/Elementor/Input_Email.php:363
+#: includes/Elementor/Input_Textarea.php:256
+#: includes/Elementor/Input_Textarea.php:346
+#: includes/Elementor/Input_Tel.php:257 includes/Elementor/Input_Tel.php:343
+#: includes/Elementor/Input_Date.php:234 includes/Elementor/Input_Date.php:320
+#: includes/Elementor/Input_Url.php:278 includes/Elementor/Input_Url.php:364
+#: includes/Elementor/Input_Number.php:366
+#: includes/Elementor/Input_Number.php:455
+#: includes/Elementor/Input_Text.php:293 includes/Elementor/Input_Text.php:379
+msgid "Box Shadow"
+msgstr ""
+
+#: includes/Ajax.php:168 includes/Sync.php:45
+msgid "Builder Content Not Found"
+msgstr ""
+
+#: includes/Ajax.php:157
+msgid "Builder Id is missing"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:21
+msgid "Builder title"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:120
+msgid "Button Style"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:90
+msgid "Button Text"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:292
+#: includes/Elementor/Input_Email.php:422
+#: includes/Elementor/Input_Textarea.php:271
+#: includes/Elementor/Input_Textarea.php:405
+#: includes/Elementor/Input_Tel.php:272 includes/Elementor/Input_Tel.php:402
+#: includes/Elementor/Input_Submit.php:136
+#: includes/Elementor/Input_Date.php:249 includes/Elementor/Input_Date.php:379
+#: includes/Elementor/Input_Url.php:293 includes/Elementor/Input_Url.php:423
+#: includes/Elementor/Input_Number.php:381
+#: includes/Elementor/Input_Number.php:515
+#: includes/Elementor/Input_Text.php:308 includes/Elementor/Input_Text.php:438
+msgid "Center"
+msgstr ""
+
+#: includes/Generator.php:25 includes/Generator.php:26
+#: includes/Generator.php:27
+msgid "CF7 Builder"
+msgstr ""
+
+#: includes/Generator.php:67
+msgid "CF7 Builder Pages"
+msgstr ""
+
+#: includes/Elementor/Input_Acceptance.php:187
+msgid "Checkbox"
+msgstr ""
+
+#: includes/Elementor/Input_Checkboxes.php:194
+#: includes/Elementor/Input_Acceptance.php:196
+msgid "Checkbox Color"
+msgstr ""
+
+#: includes/Elementor/Input_Checkboxes.php:168
+#: includes/Elementor/Input_Acceptance.php:207
+msgid "Checkbox Size"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:236
+msgid "Checked Color"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:113
+#: includes/Elementor/Input_Textarea.php:91
+#: includes/Elementor/Input_Radio_Button.php:97
+#: includes/Elementor/Input_Tel.php:91
+#: includes/Elementor/Input_Drop_down_menu.php:98
+#: includes/Elementor/Input_Submit.php:109 includes/Elementor/Input_File.php:93
+#: includes/Elementor/Input_Checkboxes.php:98
+#: includes/Elementor/Input_Date.php:84 includes/Elementor/Input_Url.php:101
+#: includes/Elementor/Input_Number.php:95
+#: includes/Elementor/Input_Acceptance.php:88
+#: includes/Elementor/Input_Quiz.php:107 includes/Elementor/Input_Text.php:128
+msgid "Classes (space-separated)"
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:172
+msgid "Color"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:176
+#: includes/Elementor/Input_Checkboxes.php:231
+msgid "Column"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:35
+msgid "Contact Form 7"
+msgstr ""
+
+#: includes/Admin/Handler.php:51
+msgid "Contact Form Title"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:87
+#: includes/Elementor/Input_Textarea.php:66
+#: includes/Elementor/Input_Radio_Button.php:83
+#: includes/Elementor/Input_Tel.php:66 includes/Elementor/Contact_Form.php:87
+#: includes/Elementor/Input_Drop_down_menu.php:73
+#: includes/Elementor/Input_Submit.php:83
+#: includes/Elementor/Input_Checkboxes.php:73
+#: includes/Elementor/Input_Date.php:59 includes/Elementor/Input_Url.php:76
+#: includes/Elementor/Input_Number.php:57
+#: includes/Elementor/Input_Acceptance.php:63
+#: includes/Elementor/Input_Text.php:103
+msgid "Content"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:36
+msgid "Create New Contact Form 7"
+msgstr ""
+
+#: includes/Elementor/Input_Date.php:114
+msgid "Date"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:171
+#: includes/Elementor/Input_Textarea.php:152
+#: includes/Elementor/Input_Tel.php:152 includes/Elementor/Input_Date.php:152
+#: includes/Elementor/Input_Url.php:162 includes/Elementor/Input_Number.php:156
+#: includes/Elementor/Input_Text.php:189
+msgid "Default Value"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:12
+msgid "Easy Build CF7"
+msgstr ""
+
+#: includes/Elementor.php:75
+msgid "Easy Build CF7 Light"
+msgstr ""
+
+#. Name of the plugin
+msgid "Easy Build CF7 Light - Elementor Addon for Contact Form 7"
+msgstr ""
+
+#: includes/Elementor.php:67
+msgid "Easy Build CF7 Light ShortCode"
+msgstr ""
+
+#: includes/Generator.php:30
+msgid "Edit CF7 Builder"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:59
+msgid "Edit with Elementor"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:93
+msgid "Enter button text"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:116
+#: includes/Elementor/Input_Textarea.php:94
+#: includes/Elementor/Input_Radio_Button.php:100
+#: includes/Elementor/Input_Tel.php:94
+#: includes/Elementor/Input_Drop_down_menu.php:101
+#: includes/Elementor/Input_File.php:96
+#: includes/Elementor/Input_Checkboxes.php:101
+#: includes/Elementor/Input_Date.php:87 includes/Elementor/Input_Url.php:104
+#: includes/Elementor/Input_Number.php:98
+#: includes/Elementor/Input_Acceptance.php:91
+#: includes/Elementor/Input_Quiz.php:110 includes/Elementor/Input_Text.php:131
+msgid "Enter classes prefixed with \"class:\", e.g. \"cla1 cla2\""
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:112
+msgid ""
+"Enter classes prefixed with \"class:\", e.g. \"class:button class:primary\""
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:160
+msgid "Error Message"
+msgstr ""
+
+#: includes/Elementor/Input_Url.php:181
+msgid "Expects Submitter URL"
+msgstr ""
+
+#: includes/Elementor/Input_Acceptance.php:127
+msgid "Field Condition"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:123
+#: includes/Elementor/Input_Textarea.php:100
+#: includes/Elementor/Input_Radio_Button.php:106
+#: includes/Elementor/Input_Tel.php:100
+#: includes/Elementor/Input_Drop_down_menu.php:107
+#: includes/Elementor/Input_Submit.php:100
+#: includes/Elementor/Input_File.php:102
+#: includes/Elementor/Input_Checkboxes.php:107
+#: includes/Elementor/Input_Date.php:93 includes/Elementor/Input_Url.php:110
+#: includes/Elementor/Input_Number.php:104
+#: includes/Elementor/Input_Acceptance.php:97
+#: includes/Elementor/Input_Quiz.php:98 includes/Elementor/Input_Text.php:137
+msgid "Field ID"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:95
+#: includes/Elementor/Input_Textarea.php:72
+#: includes/Elementor/Input_Radio_Button.php:89
+#: includes/Elementor/Input_Tel.php:72
+#: includes/Elementor/Input_Drop_down_menu.php:79
+#: includes/Elementor/Input_File.php:74
+#: includes/Elementor/Input_Checkboxes.php:79
+#: includes/Elementor/Input_Date.php:65 includes/Elementor/Input_Url.php:82
+#: includes/Elementor/Input_Number.php:75
+#: includes/Elementor/Input_Acceptance.php:69
+#: includes/Elementor/Input_Quiz.php:89 includes/Elementor/Input_Text.php:109
+msgid "Field Name"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:63
+msgid "Field Type"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:68
+msgid "File"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:192
+msgid "File Input Style"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:142
+msgid "File size limit"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:172
+#: includes/Elementor/Input_Checkboxes.php:227
+msgid "Flex"
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:244
+msgid "Focus"
+msgstr ""
+
+#: includes/Ajax.php:166 includes/Sync.php:43
+msgid "Form synced successfully"
+msgstr ""
+
+#: includes/Elementor/Input_Drop_down_menu.php:242
+msgid "Height"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:150
+#: includes/Elementor/Input_Drop_down_menu.php:151
+#: includes/Elementor/Input_Checkboxes.php:151
+msgid "Hide"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:231
+msgid "Hover"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://easy-build-cf7-light.loyalcoder.com"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://loyalcoder.com"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:144
+msgid "In bytes. You can use kb and mb suffixes."
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:197
+msgid "Input"
+msgstr ""
+
+#: includes/Elementor/Input_Acceptance.php:25
+msgid "Input Acceptance"
+msgstr ""
+
+#: includes/Elementor/Input_Checkboxes.php:21
+msgid "Input Checkboxes"
+msgstr ""
+
+#: includes/Elementor/Input_Date.php:21
+msgid "Input Date"
+msgstr ""
+
+#: includes/Elementor/Input_Drop_down_menu.php:21
+msgid "Input Drop-down menu"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:51
+msgid "Input Email"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:32
+msgid "Input File"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:313
+#: includes/Elementor/Input_Textarea.php:296
+#: includes/Elementor/Input_Tel.php:293 includes/Elementor/Input_Date.php:270
+#: includes/Elementor/Input_Url.php:314 includes/Elementor/Input_Number.php:402
+#: includes/Elementor/Input_Text.php:329
+msgid "Input Focus Style"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:476
+#: includes/Elementor/Input_Textarea.php:459
+#: includes/Elementor/Input_Tel.php:456 includes/Elementor/Input_Date.php:433
+#: includes/Elementor/Input_Url.php:477 includes/Elementor/Input_Number.php:572
+#: includes/Elementor/Input_Text.php:492
+msgid "Input Height"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:21
+msgid "Input Number"
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:41
+msgid "Input Quiz"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:31
+msgid "Input Radio Button"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:193
+#: includes/Elementor/Input_Textarea.php:172
+#: includes/Elementor/Input_Tel.php:173 includes/Elementor/Input_Date.php:165
+#: includes/Elementor/Input_Url.php:194 includes/Elementor/Input_Number.php:294
+#: includes/Elementor/Input_Text.php:209
+msgid "Input Style"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:40
+msgid "Input Submit"
+msgstr ""
+
+#: includes/Elementor/Input_Tel.php:31
+msgid "Input Telephone"
+msgstr ""
+
+#: includes/Elementor/Input_Text.php:60
+msgid "Input Text"
+msgstr ""
+
+#: includes/Elementor/Input_Textarea.php:29
+msgid "Input Text Area"
+msgstr ""
+
+#: includes/Elementor/Input_Url.php:44
+msgid "Input Url"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:452
+#: includes/Elementor/Input_Textarea.php:435
+#: includes/Elementor/Input_Tel.php:432 includes/Elementor/Input_Date.php:409
+#: includes/Elementor/Input_Url.php:453 includes/Elementor/Input_Number.php:548
+#: includes/Elementor/Input_Text.php:468
+msgid "Input Width"
+msgstr ""
+
+#: includes/Sync.php:36
+msgid "Invalid post or form ID"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:189
+#: includes/Elementor/Input_Checkboxes.php:242
+msgid "Item Gap"
+msgstr ""
+
+#: includes/Elementor/Input_Textarea.php:279
+msgid "Justify"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:142
+#: includes/Elementor/Input_Textarea.php:119
+#: includes/Elementor/Input_Radio_Button.php:125
+#: includes/Elementor/Input_Radio_Button.php:298
+#: includes/Elementor/Input_Tel.php:119
+#: includes/Elementor/Input_Drop_down_menu.php:126
+#: includes/Elementor/Input_Drop_down_menu.php:266
+#: includes/Elementor/Input_File.php:121 includes/Elementor/Input_File.php:153
+#: includes/Elementor/Input_Checkboxes.php:126
+#: includes/Elementor/Input_Checkboxes.php:298
+#: includes/Elementor/Input_Date.php:112 includes/Elementor/Input_Url.php:129
+#: includes/Elementor/Input_Number.php:123
+#: includes/Elementor/Input_Acceptance.php:116
+#: includes/Elementor/Input_Acceptance.php:147
+#: includes/Elementor/Input_Quiz.php:129 includes/Elementor/Input_Quiz.php:153
+#: includes/Elementor/Input_Text.php:156
+msgid "Label"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:310
+#: includes/Elementor/Input_Drop_down_menu.php:289
+#: includes/Elementor/Input_File.php:161
+#: includes/Elementor/Input_Checkboxes.php:310
+#: includes/Elementor/Input_Acceptance.php:156
+msgid "Label Color"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:335
+#: includes/Elementor/Input_Drop_down_menu.php:303
+#: includes/Elementor/Input_File.php:179
+#: includes/Elementor/Input_Checkboxes.php:335
+#: includes/Elementor/Input_Acceptance.php:174
+msgid "Label Margin"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:373
+#: includes/Elementor/Input_Textarea.php:356
+#: includes/Elementor/Input_Tel.php:353 includes/Elementor/Input_Date.php:330
+#: includes/Elementor/Input_Url.php:374 includes/Elementor/Input_Number.php:465
+#: includes/Elementor/Input_Text.php:389
+msgid "Label Style"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:444
+#: includes/Elementor/Input_Textarea.php:427
+#: includes/Elementor/Input_Radio_Button.php:168
+#: includes/Elementor/Input_Tel.php:424
+#: includes/Elementor/Input_Checkboxes.php:223
+#: includes/Elementor/Input_Date.php:401 includes/Elementor/Input_Url.php:445
+#: includes/Elementor/Input_Number.php:537
+#: includes/Elementor/Input_Text.php:460
+msgid "Layout"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:288
+#: includes/Elementor/Input_Email.php:418
+#: includes/Elementor/Input_Textarea.php:267
+#: includes/Elementor/Input_Textarea.php:401
+#: includes/Elementor/Input_Tel.php:268 includes/Elementor/Input_Tel.php:398
+#: includes/Elementor/Input_Submit.php:132
+#: includes/Elementor/Input_Date.php:245 includes/Elementor/Input_Date.php:375
+#: includes/Elementor/Input_Url.php:289 includes/Elementor/Input_Url.php:419
+#: includes/Elementor/Input_Number.php:377
+#: includes/Elementor/Input_Number.php:511
+#: includes/Elementor/Input_Text.php:304 includes/Elementor/Input_Text.php:434
+msgid "Left"
+msgstr ""
+
+#. Author of the plugin
+msgid "Loyalcoder"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:403
+#: includes/Elementor/Input_Textarea.php:386
+#: includes/Elementor/Input_Tel.php:383 includes/Elementor/Contact_Form.php:234
+#: includes/Elementor/Input_Drop_down_menu.php:230
+#: includes/Elementor/Input_File.php:261 includes/Elementor/Input_Date.php:360
+#: includes/Elementor/Input_Url.php:404 includes/Elementor/Input_Number.php:496
+#: includes/Elementor/Input_Quiz.php:183 includes/Elementor/Input_Text.php:419
+msgid "Margin"
+msgstr ""
+
+#: includes/Elementor/Input_Date.php:142
+msgid "Max"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:161
+#: includes/Elementor/Input_Textarea.php:142
+#: includes/Elementor/Input_Tel.php:141 includes/Elementor/Input_Url.php:151
+#: includes/Elementor/Input_Number.php:145
+#: includes/Elementor/Input_Text.php:178
+msgid "Max Length"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:107
+msgid "Message Styles"
+msgstr ""
+
+#: includes/Elementor/Input_Date.php:131
+msgid "Min"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:151
+#: includes/Elementor/Input_Textarea.php:131
+#: includes/Elementor/Input_Tel.php:130 includes/Elementor/Input_Url.php:140
+#: includes/Elementor/Input_Number.php:134
+#: includes/Elementor/Input_Text.php:167
+msgid "Min Length"
+msgstr ""
+
+#: includes/Generator.php:31
+msgid "New CF7 Builder"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:134
+#: includes/Elementor/Input_Textarea.php:83
+#: includes/Elementor/Input_Textarea.php:111
+#: includes/Elementor/Input_Textarea.php:162
+#: includes/Elementor/Input_Radio_Button.php:117
+#: includes/Elementor/Input_Tel.php:83 includes/Elementor/Input_Tel.php:111
+#: includes/Elementor/Input_Tel.php:163
+#: includes/Elementor/Input_Drop_down_menu.php:90
+#: includes/Elementor/Input_Drop_down_menu.php:118
+#: includes/Elementor/Input_File.php:85 includes/Elementor/Input_File.php:113
+#: includes/Elementor/Input_Checkboxes.php:90
+#: includes/Elementor/Input_Checkboxes.php:118
+#: includes/Elementor/Input_Date.php:76 includes/Elementor/Input_Date.php:104
+#: includes/Elementor/Input_Url.php:93 includes/Elementor/Input_Url.php:121
+#: includes/Elementor/Input_Url.php:173 includes/Elementor/Input_Url.php:184
+#: includes/Elementor/Input_Number.php:86
+#: includes/Elementor/Input_Number.php:115
+#: includes/Elementor/Input_Acceptance.php:80
+#: includes/Elementor/Input_Acceptance.php:108
+#: includes/Elementor/Input_Quiz.php:120 includes/Elementor/Input_Text.php:120
+#: includes/Elementor/Input_Text.php:148 includes/Elementor/Input_Text.php:199
+msgid "No"
+msgstr ""
+
+#: includes/Generator.php:95
+msgid "No builder pages found for this form."
+msgstr ""
+
+#: includes/Generator.php:34
+msgid "No CF7 Builder found"
+msgstr ""
+
+#: includes/Generator.php:35
+msgid "No CF7 Builder found in Trash"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:168
+#: includes/Elementor/Input_Quiz.php:207
+msgid "Normal"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:71
+msgid "OK"
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:145
+msgid "One pipe-separated question-answer pair (question|answer) per line."
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:140
+#: includes/Elementor/Input_Drop_down_menu.php:141
+#: includes/Elementor/Input_Checkboxes.php:141
+msgid ""
+"Option 1\n"
+"Option 2\n"
+"Option 3"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:270
+#: includes/Elementor/Input_Checkboxes.php:270
+msgid "Option Gap"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:265
+#: includes/Elementor/Input_Textarea.php:244
+#: includes/Elementor/Input_Tel.php:245 includes/Elementor/Contact_Form.php:214
+#: includes/Elementor/Input_Drop_down_menu.php:218
+#: includes/Elementor/Input_Submit.php:216
+#: includes/Elementor/Input_File.php:249 includes/Elementor/Input_Date.php:222
+#: includes/Elementor/Input_Url.php:266 includes/Elementor/Input_Number.php:354
+#: includes/Elementor/Input_Quiz.php:283 includes/Elementor/Input_Text.php:281
+msgid "Padding"
+msgstr ""
+
+#: includes/Sync.php:28
+msgid "Permission denied"
+msgstr ""
+
+#: includes/Elementor/Input_File.php:134
+msgid ""
+"Pipe-separated file types list. You can use file extensions and MIME types."
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:211
+#: includes/Elementor/Input_Textarea.php:190
+#: includes/Elementor/Input_Tel.php:191 includes/Elementor/Input_Url.php:212
+#: includes/Elementor/Input_Text.php:227
+msgid "Placeholder Color"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:307
+msgid "Please select a Contact Form 7 form."
+msgstr ""
+
+#: includes/Ajax.php:109
+msgid "Post created successfully."
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:141
+msgid "Questions and Answers"
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:82 includes/Elementor/Input_Quiz.php:131
+msgid "Quiz"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:213
+msgid "Radio Size"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:159
+msgid "Radio Style"
+msgstr ""
+
+#: includes/Elementor/Input_Date.php:123
+msgid "Range"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:165
+msgid "Range Style"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:104
+msgid "Required"
+msgstr ""
+
+#: includes/Elementor/Input_Textarea.php:80 includes/Elementor/Input_Tel.php:80
+#: includes/Elementor/Input_Drop_down_menu.php:87
+#: includes/Elementor/Input_File.php:82
+#: includes/Elementor/Input_Checkboxes.php:87
+#: includes/Elementor/Input_Date.php:73 includes/Elementor/Input_Url.php:90
+#: includes/Elementor/Input_Number.php:83 includes/Elementor/Input_Text.php:117
+msgid "Required Field"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:296
+#: includes/Elementor/Input_Email.php:426
+#: includes/Elementor/Input_Textarea.php:275
+#: includes/Elementor/Input_Textarea.php:409
+#: includes/Elementor/Input_Tel.php:276 includes/Elementor/Input_Tel.php:406
+#: includes/Elementor/Input_Submit.php:140
+#: includes/Elementor/Input_Date.php:253 includes/Elementor/Input_Date.php:383
+#: includes/Elementor/Input_Url.php:297 includes/Elementor/Input_Url.php:427
+#: includes/Elementor/Input_Number.php:385
+#: includes/Elementor/Input_Number.php:519
+#: includes/Elementor/Input_Text.php:312 includes/Elementor/Input_Text.php:442
+msgid "Right"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Seamlessly integrate Contact Form 7 forms with Elementor page builder. "
+"Design beautiful contact forms using Elementor's drag & drop interface, sync "
+"form fields automatically, and customize form layouts with Elementor widgets."
+msgstr ""
+
+#: includes/Generator.php:33
+msgid "Search CF7 Builder"
+msgstr ""
+
+#: includes/Generator.php:116
+msgid "Select a Contact Form:"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:280
+msgid "Select a Form"
+msgstr ""
+
+#: includes/Generator.php:118 includes/Admin/views/offcanvas.php:28
+msgid "Select a form"
+msgstr ""
+
+#: includes/Elementor/Input_Drop_down_menu.php:345
+msgid "Select an option"
+msgstr ""
+
+#: includes/Generator.php:53
+msgid "Select Contact Form"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:26
+msgid "Select Contact Form 7:"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:95
+msgid "Select Form"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:42
+msgid "Select Layout"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:137
+#: includes/Elementor/Input_Drop_down_menu.php:138
+#: includes/Elementor/Input_Checkboxes.php:138
+msgid "Selectable values"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:149
+#: includes/Elementor/Input_Drop_down_menu.php:150
+#: includes/Elementor/Input_Checkboxes.php:150
+msgid "Show"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:131
+#: includes/Elementor/Input_Textarea.php:108
+#: includes/Elementor/Input_Radio_Button.php:114
+#: includes/Elementor/Input_Tel.php:108
+#: includes/Elementor/Input_Drop_down_menu.php:115
+#: includes/Elementor/Input_File.php:110
+#: includes/Elementor/Input_Checkboxes.php:115
+#: includes/Elementor/Input_Date.php:101 includes/Elementor/Input_Url.php:118
+#: includes/Elementor/Input_Number.php:112
+#: includes/Elementor/Input_Acceptance.php:105
+#: includes/Elementor/Input_Quiz.php:117 includes/Elementor/Input_Text.php:145
+msgid "Show Label"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:67
+msgid "Slider"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:205
+msgid "Spacing"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:66
+msgid "Spinbox"
+msgstr ""
+
+#: includes/Admin/views/offcanvas.php:46
+msgid "Start With Blank"
+msgstr ""
+
+#: includes/Elementor/Input_Drop_down_menu.php:160
+#: includes/Elementor/Input_Checkboxes.php:160
+#: includes/Elementor/Input_Acceptance.php:138
+msgid "Style"
+msgstr ""
+
+#: includes/Elementor/Input_Submit.php:92
+msgid "Submit"
+msgstr ""
+
+#: includes/Elementor/Contact_Form.php:116
+msgid "Success Message"
+msgstr ""
+
+#: includes/Admin/Handler.php:52
+msgid "Sync To Cf7"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:201
+#: includes/Elementor/Input_Email.php:321
+#: includes/Elementor/Input_Email.php:384
+#: includes/Elementor/Input_Textarea.php:180
+#: includes/Elementor/Input_Textarea.php:304
+#: includes/Elementor/Input_Textarea.php:367
+#: includes/Elementor/Input_Radio_Button.php:258
+#: includes/Elementor/Input_Tel.php:181 includes/Elementor/Input_Tel.php:301
+#: includes/Elementor/Input_Tel.php:364 includes/Elementor/Contact_Form.php:124
+#: includes/Elementor/Contact_Form.php:169
+#: includes/Elementor/Input_Drop_down_menu.php:176
+#: includes/Elementor/Input_Submit.php:175
+#: includes/Elementor/Input_Submit.php:238
+#: includes/Elementor/Input_File.php:199
+#: includes/Elementor/Input_Checkboxes.php:205
+#: includes/Elementor/Input_Date.php:173 includes/Elementor/Input_Date.php:278
+#: includes/Elementor/Input_Date.php:341 includes/Elementor/Input_Url.php:202
+#: includes/Elementor/Input_Url.php:322 includes/Elementor/Input_Url.php:385
+#: includes/Elementor/Input_Number.php:305
+#: includes/Elementor/Input_Number.php:413
+#: includes/Elementor/Input_Number.php:477
+#: includes/Elementor/Input_Acceptance.php:241
+#: includes/Elementor/Input_Quiz.php:231 includes/Elementor/Input_Quiz.php:268
+#: includes/Elementor/Input_Text.php:217 includes/Elementor/Input_Text.php:337
+#: includes/Elementor/Input_Text.php:400
+msgid "Text Color"
+msgstr ""
+
+#: includes/Elementor/Input_Acceptance.php:258
+msgid "Text Gap"
+msgstr ""
+
+#: includes/Elementor/Input_Acceptance.php:282
+msgid "Text Spacing"
+msgstr ""
+
+#: includes/Elementor/Input_Quiz.php:144
+msgid "The capital of Brazil? | Rio"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:271
+msgid "Thumb Border Radius"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:189
+msgid "Thumb Color"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:202
+msgid "Thumb Size"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:250
+msgid "Track Border Radius"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:176
+msgid "Track Color"
+msgstr ""
+
+#: includes/Elementor/Input_Number.php:226
+msgid "Track Height"
+msgstr ""
+
+#: includes/Elementor/Input_Textarea.php:121
+msgid "Type Your Message"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:250
+msgid "Typography"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:181
+#: includes/Elementor/Input_Textarea.php:159
+#: includes/Elementor/Input_Tel.php:160 includes/Elementor/Input_Url.php:170
+#: includes/Elementor/Input_Text.php:196
+msgid "Use Default Value as Placeholder"
+msgstr ""
+
+#: includes/Generator.php:32
+msgid "View CF7 Builder"
+msgstr ""
+
+#: includes/Elementor/Input_Radio_Button.php:147
+#: includes/Elementor/Input_Checkboxes.php:148
+msgid "Wrap each item with a label element."
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:133
+#: includes/Elementor/Input_Textarea.php:82
+#: includes/Elementor/Input_Textarea.php:110
+#: includes/Elementor/Input_Textarea.php:161
+#: includes/Elementor/Input_Radio_Button.php:116
+#: includes/Elementor/Input_Tel.php:82 includes/Elementor/Input_Tel.php:110
+#: includes/Elementor/Input_Tel.php:162
+#: includes/Elementor/Input_Drop_down_menu.php:89
+#: includes/Elementor/Input_Drop_down_menu.php:117
+#: includes/Elementor/Input_File.php:84 includes/Elementor/Input_File.php:112
+#: includes/Elementor/Input_Checkboxes.php:89
+#: includes/Elementor/Input_Checkboxes.php:117
+#: includes/Elementor/Input_Date.php:75 includes/Elementor/Input_Date.php:103
+#: includes/Elementor/Input_Url.php:92 includes/Elementor/Input_Url.php:120
+#: includes/Elementor/Input_Url.php:172 includes/Elementor/Input_Url.php:183
+#: includes/Elementor/Input_Number.php:85
+#: includes/Elementor/Input_Number.php:114
+#: includes/Elementor/Input_Acceptance.php:79
+#: includes/Elementor/Input_Acceptance.php:107
+#: includes/Elementor/Input_Quiz.php:119 includes/Elementor/Input_Text.php:119
+#: includes/Elementor/Input_Text.php:147 includes/Elementor/Input_Text.php:198
+msgid "Yes"
+msgstr ""
+
+#: includes/Ajax.php:70
+msgid "You do not have permission to do this."
+msgstr ""
+
+#: includes/Ajax.php:160
+msgid "You have not selected any form"
+msgstr ""
+
+#: includes/Elementor/Input_Email.php:144
+msgid "Your Email"
+msgstr ""
