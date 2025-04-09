@@ -4,7 +4,7 @@
  * Plugin Name:       Easy Build CF7 Light - Elementor Addon for Contact Form 7
  * Plugin URI:        https://easy-build-cf7-light.loyalcoder.com
  * Description:       Seamlessly integrate Contact Form 7 forms with Elementor page builder. Design beautiful contact forms using Elementor's drag & drop interface, sync form fields automatically, and customize form layouts with Elementor widgets.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Loyalcoder
  * Author URI:        https://loyalcoder.com
  * Text Domain:       easy-build-cf7-light
