@@ -1,18 +1,24 @@
 {
-  "name": "builder7-cf7-elementor-addon",
-  "version": "1.0.0",
-  "description": "Adds Elementor support for Contact Form 7. Contributors: Loyalcoder",
+  "name": "easy-build-cf7-light",
+  "version": "1.0.1",
+  "description": "Seamlessly integrate Contact Form 7 forms with Elementor page builder. Design beautiful contact forms using Elementor's drag & drop interface.",
   "main": "index.js",
   "scripts": {
     "build-sass": "sass src/scss/main.scss assets/main.css",
     "watch-sass": "sass --watch src/scss/main.scss:assets/main.css",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
-    "bundle": "mkdir -p ~/Downloads/easy-build-cf7-light && rsync -av --progress . ~/Downloads/easy-build-cf7-light --exclude='/.stylelintrc.json' --exclude='/LICENSE' --exclude='/.eslintrc' --exclude='/.eslintrc.json' --exclude='/.git' --exclude='/.gitattributes' --exclude='/.github' --exclude='/.cursorrules'  --exclude='/.gitignore' --exclude='/README.md' --exclude='/node_modules' --exclude='/.travis.yml' --exclude='/phpcs.xml.dist' --exclude='/readme.md' --exclude='/sass' --exclude='/yarn.lock' --exclude='/tailwind-blocks.config.js' --exclude='/tailwind.config.js' --exclude='/webpack.config.js' --exclude='/build' --exclude='/.editorconfig' --exclude='/.eslintignore' --exclude='/.prettierrc' --exclude='/includes/gutenberg/node_modules'   && cd ~/Downloads && zip -r easy-build-cf7-light.zip easy-build-cf7-light && rm -rf easy-build-cf7-light"
+    "bundle": "mkdir -p ~/Downloads/easy-build-cf7-light && rsync -av --progress . ~/Downloads/easy-build-cf7-light --exclude='/.stylelintrc.json' --exclude='/LICENSE' --exclude='/.eslintrc' --exclude='/.eslintrc.json' --exclude='/.git' --exclude='/.gitattributes' --exclude='/.github' --exclude='/.cursorrules'  --exclude='/.gitignore' --exclude='/README.md' --exclude='/node_modules' --exclude='/.travis.yml' --exclude='/phpcs.xml.dist' --exclude='/readme.md' --exclude='/sass' --exclude='/yarn.lock' --exclude='/tailwind-blocks.config.js' --exclude='/tailwind.config.js' --exclude='/webpack.config.js' --exclude='/build' --exclude='/.editorconfig' --exclude='/.eslintignore' --exclude='/.prettierrc' --exclude='/includes/gutenberg/node_modules' --exclude='**/.DS_Store' && cd ~/Downloads && zip -r easy-build-cf7-light.zip easy-build-cf7-light && rm -rf easy-build-cf7-light"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "wordpress",
+    "elementor",
+    "contact-form-7",
+    "form-builder",
+    "page-builder"
+  ],
+  "author": "Loyalcoder",
+  "license": "GPL-2.0-or-later",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "mini-css-extract-plugin": "^2.9.2",
