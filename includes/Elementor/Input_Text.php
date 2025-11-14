@@ -462,6 +462,67 @@ class Input_Text extends Widget_Base
         ]
     );
 
+        $this->add_control(
+            'container_direction',
+            [
+                'label' => esc_html__('Direction', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'column' => [
+                        'title' => esc_html__('Column', 'easy-build-cf7-light'),
+                        'icon' => 'eicon-editor-list-ul',
+                    ],
+                    'row' => [
+                        'title' => esc_html__('Row', 'easy-build-cf7-light'),
+                        'icon' => 'eicon-ellipsis-h',
+                    ],
+                ],
+                'default' => 'column',
+                'toggle' => false,
+                'selectors' => [
+                    '{{WRAPPER}} .b7-field-parent' => 'flex-direction: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'container_align_items',
+            [
+                'label' => esc_html__('Vertical Alignment', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'flex-start' => esc_html__('Start', 'easy-build-cf7-light'),
+                    'center' => esc_html__('Center', 'easy-build-cf7-light'),
+                    'flex-end' => esc_html__('End', 'easy-build-cf7-light'),
+                    'stretch' => esc_html__('Stretch', 'easy-build-cf7-light'),
+                ],
+                'default' => 'flex-start',
+                'selectors' => [
+                    '{{WRAPPER}} .b7-field-parent' => 'align-items: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'container_justify_content',
+            [
+                'label' => esc_html__('Justify Content', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'flex-start' => esc_html__('Start', 'easy-build-cf7-light'),
+                    'center' => esc_html__('Center', 'easy-build-cf7-light'),
+                    'flex-end' => esc_html__('End', 'easy-build-cf7-light'),
+                    'space-between' => esc_html__('Space Between', 'easy-build-cf7-light'),
+                    'space-around' => esc_html__('Space Around', 'easy-build-cf7-light'),
+                    'space-evenly' => esc_html__('Space Evenly', 'easy-build-cf7-light'),
+                ],
+                'default' => 'flex-start',
+                'selectors' => [
+                    '{{WRAPPER}} .b7-field-parent' => 'justify-content: {{VALUE}};',
+                ],
+            ]
+        );
+
     $this->add_responsive_control(
         'input_width',
         [
@@ -537,11 +598,24 @@ class Input_Text extends Widget_Base
             $attributes['placeholder_preview'] = ' placeholder="'.$settings['default_value'].'"';
         }
         $attributes = array_filter($attributes);
-        $parent_class = ['b7-field-parent'];
+        $parent_class = ['b7-field-parent', 'b7-flex'];
+        $direction = isset($settings['container_direction']) ? $settings['container_direction'] : 'column';
+        $parent_class[] = $direction === 'row' ? 'b7-flex-row' : 'b7-flex-column';
+        $parent_styles = [];
+        if (!empty($settings['container_align_items'])) {
+            $parent_styles[] = 'align-items: ' . $settings['container_align_items'];
+        }
+        if (!empty($settings['container_justify_content'])) {
+            $parent_styles[] = 'justify-content: ' . $settings['container_justify_content'];
+        }
+        $parent_style_attr = '';
+        if (!empty($parent_styles)) {
+            $parent_style_attr = ' style="' . esc_attr(implode('; ', $parent_styles) . ';') . '"';
+        }
         $parent_class_joined = implode(' ', $parent_class);
         
         if(easy_build_cf7_light_is_preview()){ ?>
-           <div class="<?php echo esc_attr($parent_class_joined); ?>">
+           <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
@@ -549,7 +623,7 @@ class Input_Text extends Widget_Base
            </div>
         <?php
         }else{ ?>
-            <div class="<?php echo esc_attr($parent_class_joined); ?>">
+            <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
                 <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>

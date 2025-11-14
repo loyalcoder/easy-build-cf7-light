@@ -71,7 +71,15 @@ $form-select-disabled-border-color: $input-border-color;
 
   @include form-control-focus();
 }
-
+.b7-flex{
+  display: flex;
+}
+.b7-flex-column{
+  flex-direction: column;
+}
+.b7-flex-row{
+  flex-direction: row;
+}
 .lcf7-form-range {
   width: 100%;
   height: $form-range-thumb-height;
