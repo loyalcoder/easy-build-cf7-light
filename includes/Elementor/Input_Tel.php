@@ -538,7 +538,7 @@ class Input_Tel extends Widget_Base
             $attributes['placeholder_preview'] = ' placeholder="'.$settings['default_value'].'"';
         }
         $attributes = array_filter($attributes);
-       $parent_class = ['b7-field-parent','l-cf7-field-parent','b7-flex'];
+        $parent_class = ['b7-field-parent','l-cf7-field-parent','b7-flex'];
         $direction = isset($settings['container_direction']) ? $settings['container_direction'] : 'column';
         $parent_class[] = $direction === 'row' ? 'b7-flex-row' : 'b7-flex-column';
         $parent_styles = [];

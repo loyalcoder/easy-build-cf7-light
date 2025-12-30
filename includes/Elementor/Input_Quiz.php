@@ -198,6 +198,13 @@ class Input_Quiz extends Widget_Base
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
+        $this->add_group_control(
+			\Elementor\Group_Control_Typography::get_type(),
+			[
+				'name' => 'quiz_content_typography',
+				'selector' => '{{WRAPPER}} .lcf7-form-control',
+			]
+		);
 
         $this->start_controls_tabs('input_style_tabs');
 

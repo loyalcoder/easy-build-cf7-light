@@ -157,12 +157,12 @@ class Input_Checkboxes extends Widget_Base
     $this->start_controls_section(
         'style_section',
         [
-            'label' => esc_html__('Style', 'easy-build-cf7-light'),
+            'label' => esc_html__('Checkbox', 'easy-build-cf7-light'),
             'tab' => Controls_Manager::TAB_STYLE,
         ]
     );
 
-    $this->add_control(
+    $this->add_responsive_control(
         'checkbox_size',
         [
             'label' => esc_html__('Checkbox Size', 'easy-build-cf7-light'),
@@ -217,7 +217,7 @@ class Input_Checkboxes extends Widget_Base
             'selector' => '{{WRAPPER}} .wpcf7-list-item-label',
         ]
     );
-    $this->add_control(
+    $this->add_responsive_control(
         'layout',
         [
             'label'   => esc_html__( 'Layout', 'easy-build-cf7-light' ),
@@ -253,10 +253,6 @@ class Input_Checkboxes extends Widget_Base
 						'max' => 100,
 					],
 				],
-				// 'default' => [
-				// 	'unit' => 'px',
-				// 	'size' => 20,
-				// ],
 				'selectors' => [
 					'{{WRAPPER}}  .lcf7-flex-direction-column' => 'row-gap: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .lcf7-d-flex' => 'column-gap: {{SIZE}}{{UNIT}};',
@@ -264,7 +260,7 @@ class Input_Checkboxes extends Widget_Base
 			]
 		);
 
-        $this->add_control(
+        $this->add_responsive_control(
 			'option_checkbox_item_gaps',
 			[
 				'label' => esc_html__( 'Option Gap', 'easy-build-cf7-light' ),

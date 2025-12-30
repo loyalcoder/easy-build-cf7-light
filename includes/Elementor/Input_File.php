@@ -189,7 +189,7 @@ class Input_File extends Widget_Base
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__('File Input Style', 'easy-build-cf7-light'),
+                'label' => esc_html__('File Input', 'easy-build-cf7-light'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -211,18 +211,14 @@ class Input_File extends Widget_Base
                 'selector' => '{{WRAPPER}} .lcf7-form-control',
             ]
         );
-
-    $this->add_control(
-        'file_background_color',
+    $this->add_group_control(
+        \Elementor\Group_Control_Background::get_type(),
         [
-            'label' => esc_html__('Background Color', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-control' => 'background-color: {{VALUE}};',
-            ],
+            'name' => 'file_background_color',
+            'types' => [ 'classic', 'gradient', 'video' ],
+            'selector' => '{{WRAPPER}} .lcf7-form-control',
         ]
     );
-
     $this->add_group_control(
         \Elementor\Group_Control_Border::get_type(),
         [

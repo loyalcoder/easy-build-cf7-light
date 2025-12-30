@@ -291,84 +291,15 @@ class Input_Number extends Widget_Base
      $this->start_controls_section(
         'section_input_style',
         [
-        'label'     => esc_html__('Input Style', 'easy-build-cf7-light'),
+        'label'     => esc_html__('Input', 'easy-build-cf7-light'),
         'tab'       => Controls_Manager::TAB_STYLE,
         'condition' => [
             'field_type' => 'number',
         ],
         ]
     );
-
-    $this->add_control(
-        'input_text_color',
-        [
-            'label'     => esc_html__('Text Color', 'easy-build-cf7-light'),
-            'type'      => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-control' => 'color: {{VALUE}};',
-            ],
-        ]
-    );
-    $this->add_group_control(
-        \Elementor\Group_Control_Typography::get_type(),
-        [
-            'name'     => 'input_typography',
-            'selector' => '{{WRAPPER}} .lcf7-form-control',
-        ]
-    );
-
-    $this->add_control(
-        'input_background_color',
-        [
-            'label'     => esc_html__('Background Color', 'easy-build-cf7-light'),
-            'type'      => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-control' => 'background-color: {{VALUE}};',
-            ],
-        ]
-    );
-
-    $this->add_group_control(
-        \Elementor\Group_Control_Border::get_type(),
-        [
-            'name'     => 'input_border',
-            'selector' => '{{WRAPPER}} .lcf7-form-control',
-        ]
-    );
-
     $this->add_responsive_control(
-        'input_border_radius',
-        [
-            'label'      => esc_html__('Border Radius', 'easy-build-cf7-light'),
-            'type'       => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', '%'],
-            'selectors'  => [
-                '{{WRAPPER}} .lcf7-form-control' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-        $this->add_responsive_control(
-            'input_padding',
-            [
-                'label'      => esc_html__('Padding', 'easy-build-cf7-light'),
-                'type'       => Controls_Manager::DIMENSIONS,
-                'size_units' => ['px', 'em', '%'],
-                'selectors'  => [
-                    '{{WRAPPER}} .lcf7-form-control' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
-        $this->add_group_control(
-            \Elementor\Group_Control_Box_Shadow::get_type(),
-            [
-                'name'     => 'input_box_shadow',
-                'label'    => esc_html__('Box Shadow', 'easy-build-cf7-light'),
-                'selector' => '{{WRAPPER}} .lcf7-form-control',
-            ]
-        );
-        $this->add_responsive_control(
-            'input_alignment',
+        'input_alignment',
             [
                 'label'   => esc_html__('Alignment', 'easy-build-cf7-light'),
                 'type'    => Controls_Manager::CHOOSE,
@@ -393,20 +324,83 @@ class Input_Number extends Widget_Base
                 ],
             ]
         );
+        $this->add_control(
+            'input_text_color',
+            [
+                'label'     => esc_html__('Text Color', 'easy-build-cf7-light'),
+                'type'      => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-form-control' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name'     => 'input_typography',
+                'selector' => '{{WRAPPER}} .lcf7-form-control',
+            ]
+        );
+        $this->add_group_control(
+			\Elementor\Group_Control_Background::get_type(),
+			[
+				'name' => 'input_background_color',
+				'types' => [ 'classic', 'gradient', 'video' ],
+				'selector' => '{{WRAPPER}} .lcf7-form-control',
+			]
+		);
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name'     => 'input_border',
+                'selector' => '{{WRAPPER}} .lcf7-form-control',
+            ]
+        );
+        $this->add_group_control(
+            \Elementor\Group_Control_Box_Shadow::get_type(),
+            [
+                'name'     => 'input_box_shadow',
+                'label'    => esc_html__('Box Shadow', 'easy-build-cf7-light'),
+                'selector' => '{{WRAPPER}} .lcf7-form-control',
+            ]
+        );
+
+        $this->add_responsive_control(
+            'input_border_radius',
+            [
+                'label'      => esc_html__('Border Radius', 'easy-build-cf7-light'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .lcf7-form-control' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'input_padding',
+            [
+                'label'      => esc_html__('Padding', 'easy-build-cf7-light'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors'  => [
+                    '{{WRAPPER}} .lcf7-form-control' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
     $this->end_controls_section();
 
   // Input Focus Style Section
     $this->start_controls_section(
         'section_input_focus_style',
         [
-            'label' => esc_html__('Input Focus Style', 'easy-build-cf7-light'),
+            'label' => esc_html__('Input Focus', 'easy-build-cf7-light'),
             'tab'   => Controls_Manager::TAB_STYLE,
             'condition' => [
                 'field_type' => 'number',
             ],
         ]
     );
-
     $this->add_control(
         'input_focus_text_color',
         [
@@ -417,18 +411,14 @@ class Input_Number extends Widget_Base
             ],
         ]
     );
-
-    $this->add_control(
-        'input_focus_background_color',
+    $this->add_group_control(
+        \Elementor\Group_Control_Background::get_type(),
         [
-            'label'     => esc_html__('Background Color', 'easy-build-cf7-light'),
-            'type'      => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-control:focus' => 'background-color: {{VALUE}};',
-            ],
+            'name' => 'input_focus_background_color',
+            'types' => [ 'classic', 'gradient', 'video' ],
+            'selector' => '{{WRAPPER}} .lcf7-form-control:focus',
         ]
-    );
-
+	);
     $this->add_group_control(
         \Elementor\Group_Control_Border::get_type(),
         [
@@ -436,7 +426,14 @@ class Input_Number extends Widget_Base
             'selector' => '{{WRAPPER}} .lcf7-form-control:focus',
         ]
     );
-
+        $this->add_group_control(
+        \Elementor\Group_Control_Box_Shadow::get_type(),
+        [
+            'name'     => 'input_focus_box_shadow',
+            'label'    => esc_html__('Box Shadow', 'easy-build-cf7-light'),
+            'selector' => '{{WRAPPER}} .lcf7-form-control:focus',
+        ]
+    );
     $this->add_responsive_control(
         'input_focus_border_radius',
         [
@@ -448,56 +445,17 @@ class Input_Number extends Widget_Base
             ],
         ]
     );
-    $this->add_group_control(
-        \Elementor\Group_Control_Box_Shadow::get_type(),
-        [
-            'name'     => 'input_focus_box_shadow',
-            'label'    => esc_html__('Box Shadow', 'easy-build-cf7-light'),
-            'selector' => '{{WRAPPER}} .lcf7-form-control:focus',
-        ]
-    );
     $this->end_controls_section();
 
   // Label Style Section
     $this->start_controls_section(
         'section_label_style',
         [
-            'label'     => esc_html__('Label Style', 'easy-build-cf7-light'),
+            'label'     => esc_html__('Label', 'easy-build-cf7-light'),
             'tab'       => Controls_Manager::TAB_STYLE,
             'condition' => [
                 'show_label' => 'yes',
                 'field_type' => 'number',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'label_color',
-        [
-            'label'     => esc_html__('Text Color', 'easy-build-cf7-light'),
-            'type'      => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .l-cf7-field-parent label' => 'color: {{VALUE}};',
-            ],
-        ]
-    );
-
-    $this->add_group_control(
-        \Elementor\Group_Control_Typography::get_type(),
-        [
-            'name'     => 'label_typography',
-            'selector' => '{{WRAPPER}} .l-cf7-field-parent label',
-        ]
-    );
-
-    $this->add_responsive_control(
-        'label_margin',
-        [
-            'label'      => esc_html__('Margin', 'easy-build-cf7-light'),
-            'type'       => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', 'em', '%'],
-            'selectors'  => [
-                '{{WRAPPER}} .l-cf7-field-parent label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
             ],
         ]
     );
@@ -530,7 +488,38 @@ class Input_Number extends Widget_Base
             ],
         ]
     );
+    $this->add_control(
+        'label_color',
+        [
+            'label'     => esc_html__('Text Color', 'easy-build-cf7-light'),
+            'type'      => Controls_Manager::COLOR,
+            'selectors' => [
+                '{{WRAPPER}} .l-cf7-field-parent label' => 'color: {{VALUE}};',
+            ],
+        ]
+    );
+
+    $this->add_group_control(
+        \Elementor\Group_Control_Typography::get_type(),
+        [
+            'name'     => 'label_typography',
+            'selector' => '{{WRAPPER}} .l-cf7-field-parent label',
+        ]
+    );
+
+    $this->add_responsive_control(
+        'label_margin',
+        [
+            'label'      => esc_html__('Margin', 'easy-build-cf7-light'),
+            'type'       => Controls_Manager::DIMENSIONS,
+            'size_units' => ['px', 'em', '%'],
+            'selectors'  => [
+                '{{WRAPPER}} .l-cf7-field-parent label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            ],
+        ]
+    );
     $this->end_controls_section();
+    // Layout Section
     $this->start_controls_section(
         'section_layout',
         [
@@ -541,7 +530,66 @@ class Input_Number extends Widget_Base
             ],
         ]
     );
+    $this->add_responsive_control(
+            'container_direction',
+            [
+                'label' => esc_html__('Direction', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::CHOOSE,
+                'options' => [
+                    'column' => [
+                        'title' => esc_html__('Column', 'easy-build-cf7-light'),
+                        'icon' => 'eicon-editor-list-ul',
+                    ],
+                    'row' => [
+                        'title' => esc_html__('Row', 'easy-build-cf7-light'),
+                        'icon' => 'eicon-ellipsis-h',
+                    ],
+                ],
+                'default' => 'column',
+                'toggle' => false,
+                'selectors' => [
+                    '{{WRAPPER}} .b7-field-parent' => 'flex-direction: {{VALUE}};',
+                ],
+            ]
+        );
 
+        $this->add_responsive_control(
+            'container_align_items',
+            [
+                'label' => esc_html__('Vertical Alignment', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'flex-start' => esc_html__('Start', 'easy-build-cf7-light'),
+                    'center' => esc_html__('Center', 'easy-build-cf7-light'),
+                    'flex-end' => esc_html__('End', 'easy-build-cf7-light'),
+                    'stretch' => esc_html__('Stretch', 'easy-build-cf7-light'),
+                ],
+                'default' => 'flex-start',
+                'selectors' => [
+                    '{{WRAPPER}} .b7-field-parent' => 'align-items: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'container_justify_content',
+            [
+                'label' => esc_html__('Justify Content', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'flex-start' => esc_html__('Start', 'easy-build-cf7-light'),
+                    'center' => esc_html__('Center', 'easy-build-cf7-light'),
+                    'flex-end' => esc_html__('End', 'easy-build-cf7-light'),
+                    'space-between' => esc_html__('Space Between', 'easy-build-cf7-light'),
+                    'space-around' => esc_html__('Space Around', 'easy-build-cf7-light'),
+                    'space-evenly' => esc_html__('Space Evenly', 'easy-build-cf7-light'),
+                ],
+                'default' => 'flex-start',
+                'selectors' => [
+                    '{{WRAPPER}} .b7-field-parent' => 'justify-content: {{VALUE}};',
+                ],
+            ]
+        );
     $this->add_responsive_control(
         'input_width',
         [
@@ -610,11 +658,24 @@ class Input_Number extends Widget_Base
             $attributes['number_default'] = '"'.$settings['default_value'].'"';
         }
         $attributes          = array_filter($attributes);
-        $parent_class        = ['l-cf7-field-parent'];
+        $parent_class = ['b7-field-parent','l-cf7-field-parent','b7-flex'];
+        $direction = isset($settings['container_direction']) ? $settings['container_direction'] : 'column';
+        $parent_class[] = $direction === 'row' ? 'b7-flex-row' : 'b7-flex-column';
+        $parent_styles = [];
+        if (!empty($settings['container_align_items'])) {
+            $parent_styles[] = 'align-items: ' . $settings['container_align_items'];
+        }
+        if (!empty($settings['container_justify_content'])) {
+            $parent_styles[] = 'justify-content: ' . $settings['container_justify_content'];
+        }
+        $parent_style_attr = '';
+        if (!empty($parent_styles)) {
+            $parent_style_attr = ' style="' . esc_attr(implode('; ', $parent_styles) . ';') . '"';
+        }
         $parent_class_joined = implode(' ', $parent_class);
 
         if(easy_build_cf7_light_is_preview()){ ?>
-          <div class = "<?php echo esc_attr($parent_class_joined); ?>">
+          <div class = "<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
                 <label for = "<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
@@ -622,7 +683,7 @@ class Input_Number extends Widget_Base
            </div>
         <?php
         }else{ ?>
-            <div class = "<?php echo esc_attr($parent_class_joined); ?>">
+            <div class = "<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
                 <label for = "<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>

@@ -264,7 +264,7 @@ class Input_Radio_Button extends Widget_Base
             ]
         );
 
-        $this->add_control(
+        $this->add_responsive_control(
 			'option_checkbox_item_gap',
 			[
 				'label' => esc_html__( 'Option Gap', 'easy-build-cf7-light' ),

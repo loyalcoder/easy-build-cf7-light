@@ -117,7 +117,7 @@ class Input_Submit extends Widget_Base
         $this->start_controls_section(
             'section_style',
             [
-                'label' => esc_html__('Button Style', 'easy-build-cf7-light'),
+                'label' => esc_html__('Submit Button', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -252,7 +252,26 @@ class Input_Submit extends Widget_Base
                 'selector' => '{{WRAPPER}} .lcf7-input-submit:hover',
             ]
         );
-
+        $this->add_control(
+            'button_hover_transition',
+            [
+                'label' => esc_html__('Transition (sec)', 'easy-build-cf7-light'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 3,
+                        'step' => 0.1,
+                    ],
+                ],
+                'default' => [
+                    'size'  => 0.4,
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-input-submit:hover' => 'transition: all {{SIZE}}s ease;',
+                ],
+            ]
+        );
         $this->add_control(
             'button_hover_border_color',
             [

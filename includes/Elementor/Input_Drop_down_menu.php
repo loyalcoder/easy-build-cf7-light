@@ -157,7 +157,7 @@ class Input_Drop_Down_Menu extends Widget_Base
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__('Style', 'easy-build-cf7-light'),
+                'label' => esc_html__('Options', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -180,137 +180,133 @@ class Input_Drop_Down_Menu extends Widget_Base
                 ],
             ]
         );
+        $this->add_group_control(
+                \Elementor\Group_Control_Background::get_type(),
+                [
+                    'name' => 'select_bg_color',
+                    'types' => [ 'classic', 'gradient', 'video' ],
+                    'selector' => '{{WRAPPER}} .lcf7-form-select',
+                ]
+            );
+        $this->add_group_control(
+            \Elementor\Group_Control_Border::get_type(),
+            [
+                'name' => 'select_border',
+                'selector' => '{{WRAPPER}} .lcf7-form-select',
+            ]
+        );
 
-    $this->add_control(
-        'select_bg_color',
-        [
-            'label' => esc_html__('Background Color', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-select' => 'background-color: {{VALUE}};',
-            ],
-        ]
-    );
-
-    $this->add_group_control(
-        \Elementor\Group_Control_Border::get_type(),
-        [
-            'name' => 'select_border',
-            'selector' => '{{WRAPPER}} .lcf7-form-select',
-        ]
-    );
-
-    $this->add_responsive_control(
-        'select_border_radius',
-        [
-            'label' => esc_html__('Border Radius', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', '%'],
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'select_padding',
-        [
-            'label' => esc_html__('Padding', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', 'em', '%'],
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_responsive_control(
-        'select_margin',
-        [
-            'label' => esc_html__('Margin', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', 'em', '%'],
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-select' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-        ]
-    );
-
-    $this->add_control(
-        'select_height',
-        [
-            'label' => esc_html__('Height', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::SLIDER,
-            'size_units' => ['px', 'em'],
-            'range' => [
-                'px' => [
-                    'min' => 0,
-                    'max' => 200,
-                    'step' => 1,
+        $this->add_responsive_control(
+            'select_border_radius',
+            [
+                'label' => esc_html__('Border Radius', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-form-select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
-                'em' => [
-                    'min' => 0,
-                    'max' => 12,
-                    'step' => 0.1,
+            ]
+        );
+
+        $this->add_responsive_control(
+            'select_padding',
+            [
+                'label' => esc_html__('Padding', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-form-select' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
-            ],
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-select' => 'height: {{SIZE}}{{UNIT}};',
-            ],
-        ]
-    );
+            ]
+        );
 
-    $this->add_control(
-        'label_heading',
-        [
-            'label' => esc_html__('Label', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::HEADING,
-            'separator' => 'before',
-            'condition' => [
-                'show_label' => 'yes',
-            ],
-        ]
-    );
+        $this->add_responsive_control(
+            'select_margin',
+            [
+                'label' => esc_html__('Margin', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-form-select' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
 
-    $this->add_group_control(
-        \Elementor\Group_Control_Typography::get_type(),
-        [
-            'name' => 'label_typography',
-            'selector' => '{{WRAPPER}} .l-cf7-field-parent label',
-            'condition' => [
-                'show_label' => 'yes',
-            ],
-        ]
-    );
+        $this->add_responsive_control(
+            'select_height',
+            [
+                'label' => esc_html__('Height', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', 'em'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 200,
+                        'step' => 1,
+                    ],
+                    'em' => [
+                        'min' => 0,
+                        'max' => 12,
+                        'step' => 0.1,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-form-select' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
 
-    $this->add_control(
-        'label_color',
-        [
-            'label' => esc_html__('Label Color', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::COLOR,
-            'selectors' => [
-                '{{WRAPPER}} .l-cf7-field-parent label' => 'color: {{VALUE}};',
-            ],
-            'condition' => [
-                'show_label' => 'yes',
-            ],
-        ]
-    );
+        $this->add_control(
+            'label_heading',
+            [
+                'label' => esc_html__('Label', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::HEADING,
+                'separator' => 'before',
+                'condition' => [
+                    'show_label' => 'yes',
+                ],
+            ]
+        );
 
-    $this->add_responsive_control(
-        'label_margin',
-        [
-            'label' => esc_html__('Label Margin', 'easy-build-cf7-light'),
-            'type' => Controls_Manager::DIMENSIONS,
-            'size_units' => ['px', 'em', '%'],
-            'selectors' => [
-                '{{WRAPPER}} .l-cf7-field-parent label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
-            'condition' => [
-                'show_label' => 'yes',
-            ],
-        ]
-    );
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'label_typography',
+                'selector' => '{{WRAPPER}} .l-cf7-field-parent label',
+                'condition' => [
+                    'show_label' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'label_color',
+            [
+                'label' => esc_html__('Color', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .l-cf7-field-parent label' => 'color: {{VALUE}};',
+                ],
+                'condition' => [
+                    'show_label' => 'yes',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'label_margin',
+            [
+                'label' => esc_html__('Margin', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .l-cf7-field-parent label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+                'condition' => [
+                    'show_label' => 'yes',
+                ],
+            ]
+        );
 
     $this->end_controls_section();
     }

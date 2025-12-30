@@ -122,20 +122,20 @@ class Input_Acceptance extends Widget_Base
             ]
         );
         $this->add_control(
-            'field_condition',
-            [
-                'label'   => esc_html__( 'Field Condition', 'easy-build-cf7-light' ),
-                'type'    => Controls_Manager::TEXT,
-                'placeholder'=>'Put the condition for consent here.',
-                'default' => 'Put the condition for consent here.',
-                'label_block' => true,
-            ]
-        );
+			'field_condition',
+			[
+				'label' => esc_html__( 'Field Condition', 'easy-build-cf7-light' ),
+				'type' => \Elementor\Controls_Manager::TEXTAREA,
+				'rows' => 5,
+				'default' => esc_html__( 'Put the condition for consent here.', 'easy-build-cf7-light' ),
+				'placeholder' => esc_html__( 'Put the condition for consent here.', 'easy-build-cf7-light' ),
+			]
+		);
         $this->end_controls_section();
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__('Style', 'easy-build-cf7-light'),
+                'label' => esc_html__('Acceptance', 'easy-build-cf7-light'),
                 'tab' => Controls_Manager::TAB_STYLE,
             ]
         );
