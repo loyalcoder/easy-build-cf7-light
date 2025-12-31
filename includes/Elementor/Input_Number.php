@@ -158,6 +158,25 @@ class Input_Number extends Widget_Base
                 'default' => '',
             ]
         );
+        $this->add_control(
+            'placeholder_default_value',
+            [
+                'label' => esc_html__( 'Default Value', 'easy-build-cf7-light' ),
+                'type' => Controls_Manager::TEXT,
+                'default' => 'This is a placeholder',
+            ]
+        );
+        $this->add_control(
+            'default_value_as_placeholder_number',
+            [
+                'label' => esc_html__( 'Use Default Value as Placeholder', 'easy-build-cf7-light' ),
+                'type' => Controls_Manager::SWITCHER,
+                'label_on' => esc_html__( 'Yes', 'easy-build-cf7-light' ),
+                'label_off' => esc_html__( 'No', 'easy-build-cf7-light' ),
+                'return_value' => 'placeholder',
+                'default' => '',
+            ]
+        );
         $this->end_controls_section();
     $this->start_controls_section(
         'range_style_section',
@@ -654,6 +673,16 @@ class Input_Number extends Widget_Base
         }
         $attributes['minlength_number'] = $settings['minlength'];
         $attributes['maxlength_number'] = $settings['maxlength'];
+        
+
+        $attributes['placeholder'] = $settings['default_value_as_placeholder_number'] ? ' placeholder "'.$settings['placeholder_default_value'].'"' : ' "'.$settings['placeholder_default_value'].'"';
+        $attributes['placeholder_preview'] = ' value="'.$settings['placeholder_default_value'].'"';
+         if($settings['default_value_as_placeholder_number']){
+            $attributes['placeholder_preview'] = ' placeholder="'.$settings['placeholder_default_value'].'"';
+        }
+
+
+
         if (!empty($settings['default_value'])) {
             $attributes['number_default'] = '"'.$settings['default_value'].'"';
         }
@@ -673,7 +702,7 @@ class Input_Number extends Widget_Base
             $parent_style_attr = ' style="' . esc_attr(implode('; ', $parent_styles) . ';') . '"';
         }
         $parent_class_joined = implode(' ', $parent_class);
-
+ 
         if(easy_build_cf7_light_is_preview()){ ?>
           <div class = "<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
