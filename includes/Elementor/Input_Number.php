@@ -353,6 +353,16 @@ class Input_Number extends Widget_Base
                 ],
             ]
         );
+        $this->add_control(
+			'placeholder_text_color',
+			[
+				'label' => esc_html__( 'Placeholder Text Color', 'easy-build-cf7-light' ),
+				'type' => \Elementor\Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .lcf7-form-control::placeholder' => 'color: {{VALUE}}',
+				],
+			]
+		);
         $this->add_group_control(
             \Elementor\Group_Control_Typography::get_type(),
             [
