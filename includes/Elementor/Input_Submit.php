@@ -197,6 +197,13 @@ class Input_Submit extends Widget_Base
                 'selector' => '{{WRAPPER}} .lcf7-input-submit',
             ]
         );
+        $this->add_group_control(
+			\Elementor\Group_Control_Box_Shadow::get_type(),
+			[
+				'name' => 'button_box_shadow',
+				'selector' => '{{WRAPPER}} .lcf7-input-submit',
+			]
+		);
 
         $this->add_responsive_control(
             'button_border_radius',

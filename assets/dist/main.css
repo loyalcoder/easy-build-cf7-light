@@ -27,12 +27,6 @@
 .b7-flex {
   display: flex;
 }
-.b7-flex-column {
-  flex-direction: column;
-}
-.b7-flex-row {
-  flex-direction: row;
-}
 
 .b7-flex-column {
   flex-direction: column;
