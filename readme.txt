@@ -2,7 +2,7 @@
 Contributors: loyalcoder
 Tags: contact form 7, elementor, form builder, cf7, visual builder
 Requires at least: 5.0
-Tested up to: 6.8
+Tested up to: 6.9
 Stable tag: 1.0.3
 Requires PHP: 7.4
 License: GPLv2 or later
