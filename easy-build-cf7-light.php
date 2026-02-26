@@ -10,10 +10,10 @@
  * Text Domain:       easy-build-cf7-light
  * Requires Plugins: contact-form-7, elementor
  * Domain Path:       /languages
- * Requires at least: 5.0
+ * Requires at least: 6.0
  * Requires PHP:      7.4
- * Elementor tested up to: 3.28.4
- * Contact Form 7 tested up to: 6.0.6
+ * Elementor tested up to: 3.35.0
+ * Contact Form 7 tested up to: 6.1
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */

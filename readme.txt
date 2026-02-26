@@ -1,7 +1,7 @@
 === Easy Build CF7 Light ===
 Contributors: loyalcoder
 Tags: contact form 7, elementor, form builder, cf7, visual builder
-Requires at least: 5.0
+Requires at least: 6.0
 Tested up to: 6.9
 Stable tag: 1.0.4
 Requires PHP: 7.4
