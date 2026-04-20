@@ -568,11 +568,17 @@ class Input_Text extends Widget_Base
     protected function render()
     {
         $settings = $this->get_settings_for_display();
+        $resolved_field_id = !empty($settings['field_id']) ? sanitize_html_class($settings['field_id']) : '';
+
+        if ('' === $resolved_field_id && !empty($settings['field_name'])) {
+            $resolved_field_id = sanitize_html_class($settings['field_name']);
+        }
+
         $attributes = [];
         $attributes['type'] = 'text';
         $attributes['required'] = $settings['is_required'] === 'required' ? '*' : '';
         $attributes['field_name'] = $settings['field_name'];
-        $attributes['id'] = $settings['field_id'];
+        $attributes['id'] = $resolved_field_id;
         $attributes['class']      = 'builder-7 b7-form-control lcf7-form-control';
         if (!empty($settings['classes'])) {
             $attributes['class'] .= ' ' . $settings['classes'];
@@ -604,7 +610,7 @@ class Input_Text extends Widget_Base
         if(easy_build_cf7_light_is_preview()){ ?>
            <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo '' !== $resolved_field_id ? ' for="' . esc_attr($resolved_field_id) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses( easy_build_cf7_light_generate_html($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>
@@ -612,7 +618,7 @@ class Input_Text extends Widget_Base
         }else{ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo '' !== $resolved_field_id ? ' for="' . esc_attr($resolved_field_id) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>

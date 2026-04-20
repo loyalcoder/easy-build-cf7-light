@@ -323,7 +323,7 @@ class Input_Acceptance extends Widget_Base
         if(easy_build_cf7_light_is_preview()){ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <p>
                     <span class="wpcf7-form-control-wrap" data-name="acceptance-226">
@@ -340,7 +340,7 @@ class Input_Acceptance extends Widget_Base
         }else{ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>" >
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>
