@@ -226,9 +226,7 @@ class Input_Drop_Down_Menu extends Widget_Base
                 'label' => esc_html__('Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .lcf7-form-select' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
+                'selectors' => easy_build_cf7_light_field_margin_selectors('.lcf7-form-select'),
             ]
         );
 
@@ -253,6 +251,28 @@ class Input_Drop_Down_Menu extends Widget_Base
                 'selectors' => [
                     '{{WRAPPER}} .lcf7-form-select' => 'height: {{SIZE}}{{UNIT}};',
                 ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'select_width',
+            [
+                'label' => esc_html__('Width', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1000,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                ],
+                'selectors' => easy_build_cf7_light_input_width_selectors('.lcf7-form-select'),
             ]
         );
 
@@ -299,9 +319,7 @@ class Input_Drop_Down_Menu extends Widget_Base
                 'label' => esc_html__('Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} .l-cf7-field-parent label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
+                'selectors' => easy_build_cf7_light_label_margin_selectors(),
                 'condition' => [
                     'show_label' => 'yes',
                 ],
@@ -328,7 +346,7 @@ class Input_Drop_Down_Menu extends Widget_Base
         $select_values = array_map('trim', $values_explode);
         $attributes['values_select'] = '"' . implode('" "', $select_values) . '"';
         $attributes = array_filter($attributes);
-        $parent_class = ['l-cf7-field-parent'];
+        $parent_class = ['b7-field-parent', 'l-cf7-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
              
         if(easy_build_cf7_light_is_preview()){ ?>

@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 ?>
-<div class="l-cf7-field-parent" data-custom-validation="">
+<div class="l-cf7-field-parent b7-field-parent easy-build-cf7-light-field-parent" data-custom-validation="">
     <?php if($settings['show_label']) { ?>
         <p><label><?php echo esc_html($settings['label']); ?></label><br>
     <?php } ?>

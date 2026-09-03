@@ -1,6 +1,8 @@
 .lcf7-form-control {
   display: block;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -23,6 +25,7 @@
 
 .b7-flex {
   display: flex;
+  align-items: stretch;
 }
 
 .b7-flex-column {
@@ -99,6 +102,8 @@
 .lcf7-form-select {
   display: block;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 0.375rem 0.75rem;
   font-family: inherit;
   font-size: 1rem;
@@ -244,22 +249,84 @@
   flex-direction: column;
 }
 
-.wpcf7-list-item, .wpcf7-form-control .wpcf7-list-item label, .wpcf7-list-item .wpcf7-form-control label label, .wpcf7-list-item label {
+.wpcf7-list-item, .wpcf7-checkbox .wpcf7-list-item label, .wpcf7-radio .wpcf7-list-item label, .wpcf7-acceptance .wpcf7-list-item label, .wpcf7-list-item label {
   display: flex;
   align-items: center;
   column-gap: 6px;
   margin-left: 0;
 }
-.wpcf7-form-control {
+.wpcf7-checkbox,
+.wpcf7-radio,
+.wpcf7-acceptance {
   padding: 0;
 }
-.wpcf7-form-control .wpcf7-list-item, .wpcf7-form-control .wpcf7-list-item label, .wpcf7-list-item .wpcf7-form-control label {
+.wpcf7-checkbox .wpcf7-list-item,
+.wpcf7-radio .wpcf7-list-item,
+.wpcf7-acceptance .wpcf7-list-item,
+.wpcf7-checkbox .wpcf7-list-item label,
+.wpcf7-radio .wpcf7-list-item label,
+.wpcf7-acceptance .wpcf7-list-item label {
   margin: 0;
   display: flex;
   align-items: center;
 }
-.l-cf7-field-parent p {
+.l-cf7-field-parent p,
+.b7-field-parent p,
+.builder-7-field-parent p,
+.easy-build-cf7-light-field-parent p {
   margin-bottom: 0 !important;
+}
+
+.b7-field-parent,
+.l-cf7-field-parent,
+.builder-7-field-parent,
+.easy-build-cf7-light-field-parent {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.b7-field-parent > label,
+.l-cf7-field-parent > label,
+.builder-7-field-parent > label,
+.easy-build-cf7-light-field-parent > label,
+.b7-field-parent > p > label,
+.l-cf7-field-parent > p > label,
+.builder-7-field-parent > p > label,
+.easy-build-cf7-light-field-parent > p > label {
+  display: block;
+}
+.b7-field-parent > p,
+.l-cf7-field-parent > p,
+.builder-7-field-parent > p,
+.easy-build-cf7-light-field-parent > p {
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+.b7-field-parent .wpcf7-form-control-wrap,
+.l-cf7-field-parent .wpcf7-form-control-wrap,
+.builder-7-field-parent .wpcf7-form-control-wrap,
+.easy-build-cf7-light-field-parent .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  align-self: stretch;
+}
+.b7-flex-column > p,
+.b7-flex-column > .wpcf7-form-control-wrap {
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+.b7-flex-row > p,
+.b7-flex-row > .wpcf7-form-control-wrap {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

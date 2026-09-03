@@ -252,3 +252,88 @@ if(!function_exists('easy_build_cf7_light_sync_form')){
         return false;
     }
 }
+
+if (!function_exists('easy_build_cf7_light_input_width_selectors')) {
+    /**
+     * Elementor width selectors that match both editor HTML and CF7 frontend wraps.
+     *
+     * Contact Form 7 wraps fields in `.wpcf7-form-control-wrap`. The wrap stays 100%
+     * of the widget; the same width is applied to the control in editor and preview.
+     *
+     * @since 1.0.5
+     * @param string|array $control_selector Control selector(s) relative to the widget wrapper.
+     * @return array
+     */
+    function easy_build_cf7_light_input_width_selectors($control_selector = '.lcf7-form-control') {
+        $selectors = is_array($control_selector) ? $control_selector : array($control_selector);
+        $control_parts = array();
+        $nested_parts  = array();
+
+        foreach ($selectors as $selector) {
+            $selector = ltrim((string) $selector);
+            if ('' === $selector) {
+                continue;
+            }
+            $control_parts[] = '{{WRAPPER}} ' . $selector;
+            $nested_parts[]  = '{{WRAPPER}} .wpcf7-form-control-wrap ' . $selector;
+        }
+
+        if (empty($control_parts)) {
+            return array();
+        }
+
+        return array(
+            implode(', ', array_merge($control_parts, $nested_parts)) => 'width: {{SIZE}}{{UNIT}} !important; max-width: 100%; box-sizing: border-box;',
+        );
+    }
+}
+
+if (!function_exists('easy_build_cf7_light_field_margin_selectors')) {
+    /**
+     * Elementor margin selectors that apply to the field wrap on the CF7 frontend.
+     *
+     * @since 1.0.5
+     * @param string|array $control_selector Control selector(s) relative to the widget wrapper.
+     * @return array
+     */
+    function easy_build_cf7_light_field_margin_selectors($control_selector = '.lcf7-form-control') {
+        $selectors = is_array($control_selector) ? $control_selector : array($control_selector);
+        $control_parts = array();
+        $nested_parts  = array();
+
+        foreach ($selectors as $selector) {
+            $selector = ltrim((string) $selector);
+            if ('' === $selector) {
+                continue;
+            }
+            $control_parts[] = '{{WRAPPER}} ' . $selector;
+            $nested_parts[]  = '{{WRAPPER}} .wpcf7-form-control-wrap ' . $selector;
+        }
+
+        if (empty($control_parts)) {
+            return array();
+        }
+
+        return array(
+            implode(', ', $control_parts) => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            '{{WRAPPER}} .wpcf7-form-control-wrap' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+            implode(', ', $nested_parts) => 'margin: 0;',
+        );
+    }
+}
+
+if (!function_exists('easy_build_cf7_light_label_margin_selectors')) {
+    /**
+     * Elementor selectors for field labels (not radio/checkbox option labels).
+     *
+     * Labels are forced to block so vertical dimension margins apply.
+     *
+     * @since 1.0.5
+     * @return array
+     */
+    function easy_build_cf7_light_label_margin_selectors() {
+        return array(
+            '{{WRAPPER}} .b7-field-parent > label, {{WRAPPER}} .l-cf7-field-parent > label, {{WRAPPER}} .l-cf7-field-parent > p > label, {{WRAPPER}} .builder-7-field-parent > label, {{WRAPPER}} .easy-build-cf7-light-field-parent > label' => 'display: block; margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+        );
+    }
+}

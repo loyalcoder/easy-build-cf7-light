@@ -57,6 +57,8 @@ $form-select-disabled-border-color: $input-border-color;
 .lcf7-form-control {
   display: block;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: $input-padding-y $input-padding-x;
   font-size: $input-font-size;
   font-weight: 400;
@@ -73,6 +75,7 @@ $form-select-disabled-border-color: $input-border-color;
 }
 .b7-flex{
   display: flex;
+  align-items: stretch;
 }
 .b7-flex-column{
   flex-direction: column;
@@ -155,6 +158,8 @@ $form-select-disabled-border-color: $input-border-color;
 .lcf7-form-select {
   display: block;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: $form-select-padding-y $form-select-padding-x;
   font-family: inherit;
   font-size: $input-font-size;
@@ -334,4 +339,55 @@ $form-select-disabled-border-color: $input-border-color;
   p{
     margin-bottom: 0 !important;
   }
+}
+
+.b7-field-parent p,
+.builder-7-field-parent p,
+.easy-build-cf7-light-field-parent p {
+  margin-bottom: 0 !important;
+}
+
+.b7-field-parent,
+.l-cf7-field-parent,
+.builder-7-field-parent,
+.easy-build-cf7-light-field-parent {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  > label,
+  > p > label {
+    display: block;
+  }
+
+  > p {
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    box-sizing: border-box;
+  }
+
+  .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    align-self: stretch;
+  }
+}
+
+.b7-flex-column > p,
+.b7-flex-column > .wpcf7-form-control-wrap {
+  width: 100%;
+  max-width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.b7-flex-row > p,
+.b7-flex-row > .wpcf7-form-control-wrap {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
 }
