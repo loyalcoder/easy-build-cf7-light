@@ -608,7 +608,7 @@ class Input_Text extends Widget_Base
         $parent_class_joined = implode(' ', $parent_class);
         
         if(easy_build_cf7_light_is_preview()){ ?>
-           <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
+           <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo ! empty( $parent_styles ) ? ' style="' . esc_attr( implode( '; ', $parent_styles ) . ';' ) . '"' : ''; ?>>
             <?php if($settings['show_label']) { ?>
                 <label<?php echo '' !== $resolved_field_id ? ' for="' . esc_attr($resolved_field_id) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
@@ -616,7 +616,7 @@ class Input_Text extends Widget_Base
            </div>
         <?php
         }else{ ?>
-            <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo $parent_style_attr; ?>>
+            <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo ! empty( $parent_styles ) ? ' style="' . esc_attr( implode( '; ', $parent_styles ) . ';' ) . '"' : ''; ?>>
             <?php if($settings['show_label']) { ?>
                 <label<?php echo '' !== $resolved_field_id ? ' for="' . esc_attr($resolved_field_id) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>

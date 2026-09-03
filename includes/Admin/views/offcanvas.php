@@ -26,8 +26,8 @@
           <label for="cf7-select"><?php echo esc_html__('Select Contact Form 7:', 'easy-build-cf7-light'); ?></label>
           <select id="cf7-select" name="cf7-select">
             <option value=""><?php echo esc_html__('Select a form', 'easy-build-cf7-light'); ?></option>
-            <?php foreach (easy_build_cf7_light_get_forms() as $form) : ?>
-              <option value="<?php echo esc_attr($form['id']); ?>"><?php echo esc_html($form['title']); ?></option>
+            <?php foreach (easy_build_cf7_light_get_forms() as $easy_build_cf7_light_form) : ?>
+              <option value="<?php echo esc_attr($easy_build_cf7_light_form['id']); ?>"><?php echo esc_html($easy_build_cf7_light_form['title']); ?></option>
             <?php endforeach; ?>
           </select>
         </div>
@@ -46,10 +46,10 @@
                     <span><?php echo esc_html__('Start With Blank', 'easy-build-cf7-light'); ?></span>
                 </div>
               </div>
-            <?php foreach ($layouts as $layout) : ?>
+            <?php foreach ($layouts as $easy_build_cf7_light_layout) : ?>
               <div class="layout-row">
-                <div class="layout-item" data-layout="<?php echo esc_attr($layout['id']); ?>">
-                  <img src="<?php echo esc_url(EASY_BUILD_CF7_LIGHT_ASSETS.'/layout/'.$layout['id'].'/'.$layout['preview_image']); ?>" alt="<?php echo esc_attr($layout['id']); ?>">
+                <div class="layout-item" data-layout="<?php echo esc_attr($easy_build_cf7_light_layout['id']); ?>">
+                  <img src="<?php echo esc_url(EASY_BUILD_CF7_LIGHT_ASSETS.'/layout/'.$easy_build_cf7_light_layout['id'].'/'.$easy_build_cf7_light_layout['preview_image']); ?>" alt="<?php echo esc_attr($easy_build_cf7_light_layout['id']); ?>">
                 </div>
               </div>
             <?php endforeach; ?>

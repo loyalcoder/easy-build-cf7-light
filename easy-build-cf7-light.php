@@ -2,18 +2,18 @@
 
 /**
  * Plugin Name:       Easy Build CF7 Light
- * Plugin URI:        https://easy-build-cf7-light.loyalcoder.com
+ * Plugin URI:        https://easy-build-cf7-light.loyalcoders.com
  * Description:       Seamlessly integrate Contact Form 7 forms with Elementor page builder. Design beautiful contact forms using Elementor's drag & drop interface, sync form fields automatically, and customize form layouts with Elementor widgets.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            Loyalcoder
- * Author URI:        https://loyalcoder.com
+ * Author URI:        https://loyalcoders.com
  * Text Domain:       easy-build-cf7-light
  * Requires Plugins: contact-form-7, elementor
  * Domain Path:       /languages
- * Requires at least: 5.0
+ * Requires at least: 6.0
  * Requires PHP:      7.4
- * Elementor tested up to: 3.28.4
- * Contact Form 7 tested up to: 6.0.6
+ * Elementor tested up to: 3.35.0
+ * Contact Form 7 tested up to: 6.1
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -34,7 +34,7 @@ final class EasyBuildCF7Light
      * 
      * @var string
      */
-    const version = '1.0.0';
+    const version = '1.0.4';
 
     /**
      * contractor
