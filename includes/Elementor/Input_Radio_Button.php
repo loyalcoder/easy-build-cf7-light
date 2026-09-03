@@ -369,10 +369,10 @@ class Input_Radio_Button extends Widget_Base
         $parent_class = ['easy-build-cf7-light-field-parent', 'b7-field-parent', 'l-cf7-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
                 
-        if(easy_build_cf7_light_is_preview()){ ?>
-          <?php include_once __DIR__.'/layouts/radio_preview.php'; ?>
-        <?php
-        }else{ ?>
+        if (easy_build_cf7_light_is_preview()) {
+            require_once __DIR__ . '/layouts/radio_preview.php';
+            easy_build_cf7_light_render_radio_preview($settings, $attributes, $layout_class, $select_values);
+        } else { ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
                 <label><?php echo esc_html($settings['label']); ?></label>
