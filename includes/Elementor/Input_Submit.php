@@ -229,6 +229,42 @@ class Input_Submit extends Widget_Base
             ]
         );
 
+        $this->add_responsive_control(
+            'button_width',
+            [
+                'label' => esc_html__('Width', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::SLIDER,
+                'size_units' => ['px', '%'],
+                'range' => [
+                    'px' => [
+                        'min' => 0,
+                        'max' => 1000,
+                        'step' => 1,
+                    ],
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-input-submit' => 'width: {{SIZE}}{{UNIT}}; max-width: 100%; box-sizing: border-box;',
+                ],
+            ]
+        );
+
+        $this->add_responsive_control(
+            'button_margin',
+            [
+                'label' => esc_html__('Margin', 'easy-build-cf7-light'),
+                'type' => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', 'em', '%'],
+                'selectors' => [
+                    '{{WRAPPER}} .lcf7-input-submit' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
         $this->end_controls_tab();
 
         // Hover tab
@@ -306,7 +342,10 @@ class Input_Submit extends Widget_Base
     {
         $settings = $this->get_settings_for_display();
         
-        $classes = !empty($settings['classes']) ? ' wpcf7-form-control lcf7-type-submit ' . $settings['classes'] : 'lcf7-input-submit type-submit';
+        $classes = 'lcf7-input-submit type-submit';
+        if (!empty($settings['classes'])) {
+            $classes .= ' ' . $settings['classes'];
+        }
         $id = !empty($settings['field_id']) ? ' id:' . $settings['field_id'] : '';
         $shortcode_class = ' class:lcf7-input-submit class:type-submit';
         if (!empty($settings['classes'])) {

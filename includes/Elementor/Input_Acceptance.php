@@ -174,9 +174,7 @@ class Input_Acceptance extends Widget_Base
                 'label' => esc_html__('Label Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
-                'selectors' => [
-                    '{{WRAPPER}} label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
+                'selectors' => easy_build_cf7_light_label_margin_selectors(),
             ]
         );
 
@@ -318,12 +316,12 @@ class Input_Acceptance extends Widget_Base
         $attributes['field_condition']      = $settings['field_condition'];
         $attributes['checkbox_is_optional'] = $settings['checkbox_is_optional'];
         $attributes                         = array_filter($attributes);
-        $parent_class                       = ['b7-field-parent'];
+        $parent_class                       = ['b7-field-parent', 'l-cf7-field-parent'];
         $parent_class_joined                = implode(' ', $parent_class);
         if(easy_build_cf7_light_is_preview()){ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <p>
                     <span class="wpcf7-form-control-wrap" data-name="acceptance-226">
@@ -340,7 +338,7 @@ class Input_Acceptance extends Widget_Base
         }else{ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>" >
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>

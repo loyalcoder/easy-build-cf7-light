@@ -310,7 +310,7 @@ class Input_Radio_Button extends Widget_Base
                 'label' => esc_html__('Label Color', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}}  label' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .l-cf7-field-parent > label, {{WRAPPER}} .l-cf7-field-parent > p > label, {{WRAPPER}} .easy-build-cf7-light-field-parent > label' => 'color: {{VALUE}};',
                 ],
                 'condition' => [
                     'show_label' => 'yes',
@@ -322,7 +322,7 @@ class Input_Radio_Button extends Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'label_typography',
-                'selector' => '{{WRAPPER}}  label',
+                'selector' => '{{WRAPPER}} .l-cf7-field-parent > label, {{WRAPPER}} .l-cf7-field-parent > p > label, {{WRAPPER}} .easy-build-cf7-light-field-parent > label',
                 'condition' => [
                     'show_label' => 'yes',
                 ],
@@ -335,9 +335,7 @@ class Input_Radio_Button extends Widget_Base
                 'label' => esc_html__('Label Margin', 'easy-build-cf7-light'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', 'em', '%'],
-                'selectors' => [
-                    '{{WRAPPER}}  label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
+                'selectors' => easy_build_cf7_light_label_margin_selectors(),
                 'condition' => [
                     'show_label' => 'yes',
                 ],
@@ -368,7 +366,7 @@ class Input_Radio_Button extends Widget_Base
         $select_values = array_map('trim', $values_explode);
         $attributes['values_select'] = '"' . implode('" "', $select_values) . '"';
         $attributes = array_filter($attributes);
-        $parent_class = ['easy-build-cf7-light-field-parent'];
+        $parent_class = ['easy-build-cf7-light-field-parent', 'b7-field-parent', 'l-cf7-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
                 
         if(easy_build_cf7_light_is_preview()){ ?>
@@ -377,7 +375,7 @@ class Input_Radio_Button extends Widget_Base
         }else{ ?>
             <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses(easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr()); ?>
            </div>

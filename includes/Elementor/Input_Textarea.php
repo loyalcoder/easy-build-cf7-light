@@ -199,7 +199,7 @@ class Input_Textarea extends Widget_Base
                     'default' => 'left',
                     'toggle' => true,
                     'selectors' => [
-                        '{{WRAPPER}} .l-cf7-field-parent > textarea' => 'text-align: {{VALUE}};',
+                        '{{WRAPPER}} .l-cf7-field-parent > textarea, {{WRAPPER}} .lcf7-form-control' => 'text-align: {{VALUE}};',
                     ],
                 ]
         );
@@ -402,9 +402,7 @@ class Input_Textarea extends Widget_Base
             'label' => esc_html__('Margin', 'easy-build-cf7-light'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', 'em', '%'],
-            'selectors' => [
-                '{{WRAPPER}} .l-cf7-field-parent label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
+            'selectors' => easy_build_cf7_light_label_margin_selectors(),
         ]
     );
     $this->end_controls_section();
@@ -450,7 +448,7 @@ class Input_Textarea extends Widget_Base
                     'flex-end' => esc_html__('End', 'easy-build-cf7-light'),
                     'stretch' => esc_html__('Stretch', 'easy-build-cf7-light'),
                 ],
-                'default' => 'flex-start',
+                'default' => 'stretch',
                 'selectors' => [
                     '{{WRAPPER}} .b7-field-parent' => 'align-items: {{VALUE}};',
                 ],
@@ -494,9 +492,7 @@ class Input_Textarea extends Widget_Base
                     'step' => 1,
                 ],
             ],
-            'selectors' => [
-                '{{WRAPPER}} .lcf7-form-control' => 'width: {{SIZE}}{{UNIT}};',
-            ],
+            'selectors' => easy_build_cf7_light_input_width_selectors(),
         ]
     );
 
@@ -561,31 +557,20 @@ class Input_Textarea extends Widget_Base
         $parent_class = ['b7-field-parent','l-cf7-field-parent','b7-flex'];
         $direction = isset($settings['container_direction']) ? $settings['container_direction'] : 'column';
         $parent_class[] = $direction === 'row' ? 'b7-flex-row' : 'b7-flex-column';
-        $parent_styles = [];
-        if (!empty($settings['container_align_items'])) {
-            $parent_styles[] = 'align-items: ' . $settings['container_align_items'];
-        }
-        if (!empty($settings['container_justify_content'])) {
-            $parent_styles[] = 'justify-content: ' . $settings['container_justify_content'];
-        }
-        $parent_style_attr = '';
-        if (!empty($parent_styles)) {
-            $parent_style_attr = ' style="' . esc_attr(implode('; ', $parent_styles) . ';') . '"';
-        }
         $parent_class_joined = implode(' ', $parent_class);
         
         if(easy_build_cf7_light_is_preview()){ ?>
-          <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo ! empty( $parent_styles ) ? ' style="' . esc_attr( implode( '; ', $parent_styles ) . ';' ) . '"' : ''; ?>>
+          <div class="<?php echo esc_attr($parent_class_joined); ?>">
           <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
             <textarea class="<?php echo esc_attr($attributes['class']); ?>" col="40" row="10" <?php echo esc_attr($fr_placeholder); ?>><?php echo wp_kses_post($fr_value);  ?></textarea>
         </div>
         <?php
         }else{ ?>
-            <div class="<?php echo esc_attr($parent_class_joined); ?>"<?php echo ! empty( $parent_styles ) ? ' style="' . esc_attr( implode( '; ', $parent_styles ) . ';' ) . '"' : ''; ?>>
+            <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>

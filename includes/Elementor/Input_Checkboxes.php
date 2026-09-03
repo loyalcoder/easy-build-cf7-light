@@ -331,9 +331,7 @@ class Input_Checkboxes extends Widget_Base
             'label' => esc_html__('Label Margin', 'easy-build-cf7-light'),
             'type' => Controls_Manager::DIMENSIONS,
             'size_units' => ['px', 'em', '%'],
-            'selectors' => [
-                '{{WRAPPER}} .l-cf7-field-parent .check-label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-            ],
+            'selectors' => easy_build_cf7_light_label_margin_selectors(),
             'condition' => [
                 'show_label' => 'yes',
             ],
@@ -361,13 +359,13 @@ class Input_Checkboxes extends Widget_Base
         $select_values = array_map('trim', $values_explode);
         $attributes['values_select'] = '"' . implode('" "', $select_values) . '"';
         $attributes = array_filter($attributes);
-        $parent_class = ['l-cf7-field-parent'];
+        $parent_class = ['l-cf7-field-parent', 'b7-field-parent'];
         $parent_class_joined = implode(' ', $parent_class);
         
         if(easy_build_cf7_light_is_preview()){ ?>
            <div class="<?php echo esc_attr($parent_class_joined); ?>">
            <?php if($settings['show_label']) { ?>
-                <p><label class="check-label" for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label><br>
+                <p><label class="check-label"><?php echo esc_html($settings['label']); ?></label><br>
             <?php } ?>
             <span class="wpcf7-form-control-wrap" data-name="<?php echo esc_attr($settings['field_name']); ?>">
                 <span class="wpcf7-form-control wpcf7-checkbox <?php echo esc_attr($attributes['class']); ?>">
@@ -395,7 +393,7 @@ class Input_Checkboxes extends Widget_Base
         }else{ ?>
            <div class="<?php echo esc_attr($parent_class_joined); ?>">
             <?php if($settings['show_label']) { ?>
-                <label for="<?php echo esc_attr($settings['field_id']); ?>"><?php echo esc_html($settings['label']); ?></label>
+                <label class="check-label"<?php echo !empty($settings['field_id']) ? ' for="' . esc_attr($settings['field_id']) . '"' : ''; ?>><?php echo esc_html($settings['label']); ?></label>
             <?php } ?>
                 <?php echo wp_kses( easy_build_cf7_light_generate_shortcode($attributes), easy_build_cf7_light_allow_form_attr());?>
            </div>
