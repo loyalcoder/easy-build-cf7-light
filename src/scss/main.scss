@@ -337,14 +337,28 @@ $form-select-disabled-border-color: $input-border-color;
 
 .l-cf7-field-parent{
   p{
-    margin-bottom: 0 !important;
+    margin: 0 !important;
+    padding: 0;
   }
 }
 
 .b7-field-parent p,
+.l-cf7-field-parent p,
 .builder-7-field-parent p,
 .easy-build-cf7-light-field-parent p {
-  margin-bottom: 0 !important;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.b7-field-parent > br,
+.l-cf7-field-parent > br,
+.builder-7-field-parent > br,
+.easy-build-cf7-light-field-parent > br,
+.b7-field-parent > p > br,
+.l-cf7-field-parent > p > br,
+.builder-7-field-parent > p > br,
+.easy-build-cf7-light-field-parent > p > br {
+  display: none;
 }
 
 .b7-field-parent,
